@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEXARIUM — Revue trimestrielle</title>
+
+<meta
+  name="description"
+  content="NEXARIUM — revue trimestrielle consacrée à la culture, aux sciences, à la recherche, au patrimoine, aux arts et aux phénomènes contemporains."
+>
+
+<style>
+/* =========================================================
+   NEXARIUM — INDEX
+   Editorial / Contemporary Journal Design
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --paper: #f3f0e9;
+    --paper-soft: #e9e5dc;
+    --ink: #171714;
+    --muted: #68665f;
+    --line: #c9c4b8;
+    --accent: #9d1f27;
+    --accent-dark: #77171d;
+    --white: #faf9f5;
+    --max: 1240px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    border-bottom: 1px solid var(--line);
+    background: rgba(243, 240, 233, 0.96);
+}
+
+.header-inner {
+    max-width: var(--max);
+    margin: auto;
+    min-height: 82px;
+    padding: 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--ink);
+
+    display: grid;
+    place-items: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.brand-name {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.main-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #42413c;
+
+    transition: color .2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.nav-archive {
+    color: var(--accent) !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    max-width: var(--max);
+    margin: auto;
+    padding: 115px 34px 125px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.35fr .65fr;
+    gap: 90px;
+    align-items: end;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.eyebrow::before {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background: var(--accent);
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(62px, 9vw, 128px);
+    line-height: .88;
+    letter-spacing: -.045em;
+    font-weight: 500;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-intro {
+    max-width: 600px;
+    margin-top: 40px;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(21px, 2.3vw, 30px);
+    line-height: 1.42;
+    color: #3d3b36;
+}
+
+.hero-side {
+    border-top: 1px solid var(--ink);
+    padding-top: 22px;
+}
+
+.hero-side-label {
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-side p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #45433e;
+}
+
+.hero-rule {
+    height: 1px;
+    background: var(--ink);
+    margin-top: 75px;
+}
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.section {
+    max-width: var(--max);
+    margin: auto;
+    padding: 110px 34px;
+}
+
+.section-dark {
+    background: var(--ink);
+    color: var(--white);
+    max-width: none;
+}
+
+.section-dark-inner {
+    max-width: var(--max);
+    margin: auto;
+    padding: 110px 34px;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 70px;
+
+    border-top: 1px solid currentColor;
+    padding-top: 25px;
+}
+
+.section-number {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: var(--accent);
+}
+
+.section-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -.025em;
+}
+
+.section-content {
+    margin-left: 340px;
+    max-width: 760px;
+    margin-top: 55px;
+}
+
+.section-content p {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #55524b;
+}
+
+.section-dark .section-content p {
+    color: #c9c6be;
+}
+
+/* =========================================================
+   EDITORIAL PRINCIPLES
+   ========================================================= */
+
+.principles {
+    margin-top: 90px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.principle {
+    padding: 42px 35px 48px;
+    border-right: 1px solid var(--line);
+}
+
+.principle:last-child {
+    border-right: 0;
+}
+
+.principle-number {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 25px;
+}
+
+.principle h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.principle p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* =========================================================
+   DOMAINS
+   ========================================================= */
+
+.domains {
+    margin-top: 90px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid currentColor;
+}
+
+.domain {
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+
+    display: flex;
+    gap: 35px;
+}
+
+.domain-index {
+    min-width: 45px;
+
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: var(--accent);
+}
+
+.domain h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.domain p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #aaa79f;
+}
+
+/* =========================================================
+   COLLECTION / ISSUES
+   ========================================================= */
+
+.issues-header {
+    max-width: var(--max);
+    margin: auto;
+    padding: 115px 34px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+}
+
+.issues-header h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(45px, 6vw, 78px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -.035em;
+}
+
+.issues-header p {
+    max-width: 390px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.issues {
+    max-width: var(--max);
+    margin: auto;
+    padding: 0 34px 120px;
+}
+
+.issue {
+    display: grid;
+    grid-template-columns: 110px 1fr 180px;
+    gap: 45px;
+    align-items: center;
+
+    padding: 42px 0;
+
+    border-top: 1px solid var(--line);
+
+    transition:
+        padding .25s ease,
+        background .25s ease;
+}
+
+.issue:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.issue:hover {
+    padding-left: 18px;
+    padding-right: 18px;
+    background: rgba(157,31,39,.035);
+}
+
+.issue-number {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    color: var(--accent);
+}
+
+.issue-info .date {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.issue-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.issue-info p {
+    max-width: 650px;
+    margin-top: 12px;
+
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.issue-link {
+    justify-self: end;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid var(--ink);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    transition:
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.issue-link::after {
+    content: "→";
+    font-size: 17px;
+}
+
+.issue-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* =========================================================
+   CLOSING STATEMENT
+   ========================================================= */
+
+.closing {
+    background: var(--paper-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.closing-inner {
+    max-width: 920px;
+    margin: auto;
+    padding: 120px 34px;
+
+    text-align: center;
+}
+
+.closing-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+}
+
+.closing h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.closing p {
+    max-width: 650px;
+    margin: 30px auto 0;
+
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.footer-inner {
+    max-width: var(--max);
+    margin: auto;
+    padding: 55px 34px 35px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    padding-bottom: 45px;
+    border-bottom: 1px solid #373631;
+}
+
+.footer-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 31px;
+    letter-spacing: .08em;
+}
+
+.footer-description {
+    max-width: 420px;
+    margin-top: 12px;
+
+    color: #aaa79f;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 30px;
+    align-items: start;
+}
+
+.footer-nav a {
+    font-size: 12px;
+    color: #d0cdc5;
+}
+
+.footer-nav a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: #77756f;
+    font-size: 11px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .header-inner {
+        min-height: 72px;
+        padding: 0 20px;
+    }
+
+    .main-nav {
+        gap: 14px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+    .brand-name {
+        font-size: 17px;
+    }
+
+    .hero {
+        padding: 75px 20px 85px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(57px, 18vw, 90px);
+    }
+
+    .hero-intro {
+        font-size: 21px;
+        margin-top: 28px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .section-dark-inner {
+        padding: 75px 20px;
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-content {
+        margin-left: 0;
+        margin-top: 35px;
+    }
+
+    .section-content p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .principles {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+    }
+
+    .principle {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .principle:last-child {
+        border-bottom: 0;
+    }
+
+    .domains {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+    }
+
+    .issues-header {
+        padding: 80px 20px 45px;
+        display: block;
+    }
+
+    .issues-header p {
+        margin-top: 25px;
+    }
+
+    .issues {
+        padding: 0 20px 80px;
+    }
+
+    .issue {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 32px 0;
+    }
+
+    .issue:hover {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .issue-link {
+        justify-self: start;
+        margin-top: 8px;
+    }
+
+    .closing-inner {
+        padding: 80px 20px;
+    }
+
+    .footer-inner {
+        padding: 45px 20px 25px;
+    }
+
+    .footer-top {
+        display: block;
+    }
+
+    .footer-nav {
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        display: block;
+    }
+
+    .footer-bottom span + span {
+        display: block;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .main-nav a:nth-child(2) {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .domain {
+        display: block;
+    }
+
+    .domain-index {
+        margin-bottom: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">N</span>
+            <span class="brand-name">NEXARIUM</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">Accueil</a>
+            <a href="archives.html" class="nav-archive">Archives</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                Revue trimestrielle
+            </div>
+
+            <h1>
+                NEXA<span>RIUM</span>
+            </h1>
+
+            <p class="hero-intro">
+                Une revue consacrée à la culture, aux sciences,
+                à la recherche, au patrimoine, aux arts et à
+                l’analyse des phénomènes contemporains.
+            </p>
+
+        </div>
+
+        <aside class="hero-side">
+
+            <div class="hero-side-label">
+                Une revue indépendante
+            </div>
+
+            <p>
+                NEXARIUM propose un espace éditorial consacré
+                à l'exploration des savoirs, à la circulation
+                des idées et au dialogue entre les disciplines.
+            </p>
+
+        </aside>
+
+    </div>
+
+    <div class="hero-rule"></div>
+
+</section>
+
+
+<!-- =====================================================
+     PRÉSENTATION
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div class="section-number">
+            01 — LA REVUE
+        </div>
+
+        <h2 class="section-title">
+            Comprendre le monde
+            par le croisement
+            des regards.
+        </h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <p>
+            NEXARIUM est une revue périodique en ligne publiée
+            quatre fois par an. Elle accueille des textes consacrés
+            à la culture, aux sciences, à la recherche, au patrimoine,
+            aux arts et aux transformations de la société contemporaine.
+        </p>
+
+        <br>
+
+        <p>
+            Chaque numéro constitue un ensemble éditorial autonome.
+            Les articles réunis dans la revue cherchent à documenter,
+            analyser et mettre en perspective des objets, des idées
+            et des phénomènes qui participent à la compréhension
+            du monde contemporain.
+        </p>
+
+        <br>
+
+        <p>
+            NEXARIUM privilégie une approche exigeante mais accessible :
+            les sujets sont traités avec attention, replacés dans leur
+            contexte et ouverts à la confrontation des perspectives.
+        </p>
+
+    </div>
+
+
+    <div class="principles">
+
+        <article class="principle">
+
+            <div class="principle-number">I</div>
+
+            <h3>Explorer</h3>
+
+            <p>
+                Ouvrir des perspectives sur des sujets culturels,
+                scientifiques, artistiques et sociaux.
+            </p>
+
+        </article>
+
+
+        <article class="principle">
+
+            <div class="principle-number">II</div>
+
+            <h3>Analyser</h3>
+
+            <p>
+                Donner aux phénomènes étudiés le temps et l'espace
+                nécessaires à une lecture approfondie.
+            </p>
+
+        </article>
+
+
+        <article class="principle">
+
+            <div class="principle-number">III</div>
+
+            <h3>Transmettre</h3>
+
+            <p>
+                Faire circuler les connaissances et rendre les
+                réflexions accessibles à un lectorat curieux.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     APPROCHE
+     ===================================================== -->
+
+<section class="section-dark">
+
+    <div class="section-dark-inner">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                02 — APPROCHE
+            </div>
+
+            <h2 class="section-title">
+                Une ligne éditoriale
+                transdisciplinaire.
+            </h2>
+
+        </div>
+
+
+        <div class="section-content">
+
+            <p>
+                Les frontières entre culture, science, art,
+                patrimoine et société sont souvent poreuses.
+                NEXARIUM entend précisément explorer ces zones
+                de rencontre.
+            </p>
+
+            <br>
+
+            <p>
+                La revue met en relation différentes formes
+                de connaissance afin de proposer une lecture
+                plus large des phénomènes étudiés.
+            </p>
+
+            <br>
+
+            <p>
+                Cette démarche permet à chaque numéro de développer
+                une identité éditoriale propre tout en conservant
+                une ligne générale fondée sur la connaissance,
+                la recherche, l'analyse et la réflexion.
+            </p>
+
+        </div>
+
+
+        <div class="domains">
+
+            <article class="domain">
+
+                <div class="domain-index">I</div>
+
+                <div>
+                    <h3>Culture</h3>
+                    <p>
+                        Histoire culturelle, idées, pratiques
+                        et transformations de la culture.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="domain">
+
+                <div class="domain-index">II</div>
+
+                <div>
+                    <h3>Science</h3>
+                    <p>
+                        Sciences, découvertes, connaissances
+                        et évolution des savoirs.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="domain">
+
+                <div class="domain-index">III</div>
+
+                <div>
+                    <h3>Recherche</h3>
+                    <p>
+                        Travaux, méthodes, problématiques
+                        et nouvelles perspectives.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="domain">
+
+                <div class="domain-index">IV</div>
+
+                <div>
+                    <h3>Patrimoine</h3>
+                    <p>
+                        Mémoire, conservation, héritage culturel
+                        et patrimoine visuel.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="domain">
+
+                <div class="domain-index">V</div>
+
+                <div>
+                    <h3>Arts</h3>
+                    <p>
+                        Création artistique, esthétique,
+                        photographie et pratiques contemporaines.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="domain">
+
+                <div class="domain-index">VI</div>
+
+                <div>
+                    <h3>Société</h3>
+                    <p>
+                        Analyse des phénomènes sociaux,
+                        culturels et intellectuels contemporains.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NUMÉROS PARUS
+     ===================================================== -->
+
+<section id="numeros">
+
+    <div class="issues-header">
+
+        <div>
+
+            <div class="eyebrow">
+                Collection
+            </div>
+
+            <h2>
+                Numéros parus
+            </h2>
+
+        </div>
+
+        <p>
+            Retrouvez ici les numéros déjà publiés de NEXARIUM.
+            Chaque entrée renvoie directement vers le numéro
+            correspondant.
+        </p>
+
+    </div>
+
+
+    <div class="issues">
+
+        <!-- NUMÉRO 01 -->
+
+        <article class="issue">
+
+            <div class="issue-number">
+                Vol. I<br>
+                No. 01
+            </div>
+
+            <div class="issue-info">
+
+                <div class="date">
+                    1er trimestre 2026
+                </div>
+
+                <h3>
+                    Premier numéro
+                </h3>
+
+                <p>
+                    Culture · Science · Recherche · Patrimoine ·
+                    Arts · Société
+                </p>
+
+            </div>
+
+            <a
+                class="issue-link"
+                href="numero-01.html"
+            >
+                Consulter le numéro
+            </a>
+
+        </article>
+
+
+        <!--
+        ==================================================
+        AJOUTER LES PROCHAINS NUMÉROS ICI
+
+        <article class="issue">
+
+            <div class="issue-number">
+                Vol. I<br>
+                No. 02
+            </div>
+
+            <div class="issue-info">
+
+                <div class="date">
+                    2e trimestre 2026
+                </div>
+
+                <h3>
+                    Titre du numéro
+                </h3>
+
+                <p>
+                    Description courte du numéro.
+                </p>
+
+            </div>
+
+            <a
+                class="issue-link"
+                href="numero-02.html"
+            >
+                Consulter le numéro
+            </a>
+
+        </article>
+        ==================================================
+        -->
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONCLUSION
+     ===================================================== -->
+
+<section class="closing">
+
+    <div class="closing-inner">
+
+        <div class="closing-label">
+            NEXARIUM
+        </div>
+
+        <h2>
+            Une revue pour comprendre,
+            explorer et transmettre.
+        </h2>
+
+        <p>
+            Une publication trimestrielle conçue comme un espace
+            de rencontre entre les savoirs, les disciplines,
+            les recherches et les regards contemporains.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-brand">
+                    NEXARIUM
+                </div>
+
+                <p class="footer-description">
+                    Revue trimestrielle en ligne consacrée à la
+                    culture, aux sciences, à la recherche,
+                    au patrimoine, aux arts et à la société.
+                </p>
+
+            </div>
+
+
+            <nav class="footer-nav">
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
+                <a href="archives.html">
+                    Archives
+                </a>
+
+                <a href="mentions-legales.html">
+                    Mentions légales
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 NEXARIUM
+            </span>
+
+            <span>
+                Revue trimestrielle en ligne
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+  </html> 
