@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEXARIUM — Revue trimestrielle</title>
+
+<meta name="description" content="NEXARIUM — Revue trimestrielle consacrée au patrimoine visuel, à l'art, à l'architecture, à la photographie et à la culture moderne et contemporaine.">
+<meta name="author" content="NVO987">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nexarium.nvo987.fr/">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#f5e7a1;
+    --black:#050505;
+    --card:#0d0d0d;
+    --border:rgba(212,175,55,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:radial-gradient(circle at top,
+    #111 0%,
+    #080808 30%,
+    #000 100%);
+    color:#f5f5f5;
+    font-family:'Cormorant Garamond', serif;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* GOLD GLOW */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,
+    rgba(212,175,55,.08),
+    transparent 70%);
+    top:-250px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:140px 20px 100px;
+}
+
+.logo{
+    font-family:'Playfair Display', serif;
+    font-size:6rem;
+    letter-spacing:10px;
+    font-weight:700;
+
+    background:linear-gradient(
+    180deg,
+    #fff7d1,
+    #f8d56c,
+    #d4af37,
+    #8b6b11);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 25px rgba(212,175,55,.35);
+}
+
+.subtitle{
+    margin-top:15px;
+    letter-spacing:6px;
+    color:#b99a37;
+    text-transform:uppercase;
+    font-size:1rem;
+}
+
+.tagline{
+    max-width:800px;
+    margin:40px auto 0;
+    font-size:1.5rem;
+    line-height:1.8;
+    color:#d8d8d8;
+}
+
+/* SECTION */
+
+.section{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+
+    background:linear-gradient(
+    180deg,
+    #fff8d7,
+    #d4af37);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.03),
+    rgba(212,175,55,.04));
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+    padding:40px;
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 40px rgba(212,175,55,.15),
+    inset 0 0 40px rgba(212,175,55,.04);
+}
+
+.card h3{
+    font-size:2rem;
+    margin-bottom:15px;
+
+    background:linear-gradient(
+    180deg,
+    #fff4c7,
+    #d4af37);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.card p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#d4d4d4;
+}
+
+/* FEATURE */
+
+.feature{
+    margin-top:90px;
+
+    border:1px solid var(--border);
+
+    padding:70px;
+    border-radius:30px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(212,175,55,.05),
+    rgba(255,255,255,.01));
+}
+
+.feature h2{
+    font-size:4rem;
+    margin-bottom:20px;
+
+    background:linear-gradient(
+    180deg,
+    #fff8d0,
+    #d4af37);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.feature p{
+    font-size:1.4rem;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#d7d7d7;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:120px;
+    border-top:1px solid rgba(212,175,55,.15);
+    text-align:center;
+    padding:40px;
+}
+
+.footer-brand{
+    font-size:1.2rem;
+    letter-spacing:5px;
+    color:#d4af37;
+}
+
+.footer-copy{
+    margin-top:10px;
+    color:#999;
+}
+
+
+/* =========================================================
+   NEXARIUM — NAVIGATION AJOUTÉE
+   ========================================================= */
+
+.navbar{
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(212,175,55,.15);
+}
+
+.nav-inner{
+    width:90%;
+    max-width:1400px;
+    min-height:76px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.nav-brand{
+    color:#d4af37;
+    text-decoration:none;
+
+    font-family:'Playfair Display',serif;
+    font-size:1.25rem;
+    letter-spacing:5px;
+
+    transition:.4s ease;
+}
+
+.nav-brand:hover{
+    color:#fff4c7;
+    text-shadow:0 0 20px rgba(212,175,55,.35);
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:35px;
+
+    list-style:none;
+}
+
+.nav-menu a{
+    position:relative;
+
+    color:#d8d8d8;
+    text-decoration:none;
+
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.85rem;
+
+    transition:.4s ease;
+}
+
+.nav-menu a::after{
+    content:'';
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:1px;
+
+    background:#d4af37;
+
+    transition:.4s ease;
+}
+
+.nav-menu a:hover{
+    color:#f5e7a1;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+
+/* =========================================================
+   NEXARIUM — ARCHIVES AJOUTÉES
+   ========================================================= */
+
+.archive-list{
+    max-width:1100px;
+    margin:auto;
+
+    border-top:1px solid var(--border);
+}
+
+.archive-item{
+    display:grid;
+    grid-template-columns:190px 1fr auto;
+    align-items:center;
+    gap:30px;
+
+    padding:30px 15px;
+
+    border-bottom:1px solid var(--border);
+
+    transition:.4s ease;
+}
+
+.archive-item:hover{
+    transform:translateX(8px);
+
+    background:rgba(212,175,55,.035);
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,.05);
+}
+
+.archive-date{
+    color:#b99a37;
+
+    font-size:.9rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.archive-content h3{
+    color:#f5e7a1;
+
+    font-family:'Playfair Display',serif;
+    font-size:1.7rem;
+    font-weight:500;
+
+    margin-bottom:6px;
+}
+
+.archive-content p{
+    color:#aaa;
+    font-size:1.1rem;
+}
+
+.archive-link{
+    color:#d4af37;
+    text-decoration:none;
+
+    font-size:.85rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    transition:.3s ease;
+}
+
+.archive-link:hover{
+    color:#fff8d0;
+}
+
+
+/* =========================================================
+   NEXARIUM — IMPRESSUM AJOUTÉ
+   ========================================================= */
+
+.impressum-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+
+    max-width:1100px;
+    margin:auto;
+}
+
+.impressum-card{
+    background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.03),
+    rgba(212,175,55,.04));
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+    padding:40px;
+
+    transition:.4s ease;
+}
+
+.impressum-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 40px rgba(212,175,55,.12),
+    inset 0 0 40px rgba(212,175,55,.03);
+}
+
+.impressum-card h3{
+    font-size:1.8rem;
+    margin-bottom:18px;
+
+    color:#f5e7a1;
+}
+
+.impressum-card p{
+    font-size:1.15rem;
+    line-height:1.8;
+    color:#d4d4d4;
+}
+
+.impressum-card a{
+    color:#d4af37;
+    text-decoration:none;
+
+    transition:.3s ease;
+}
+
+.impressum-card a:hover{
+    color:#fff4c7;
+}
+
+
+/* =========================================================
+   FOOTER LINKS AJOUTÉS
+   ========================================================= */
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    margin-top:22px;
+}
+
+.footer-links a{
+    color:#aaa;
+    text-decoration:none;
+
+    font-size:1rem;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:#d4af37;
+}
+
+
+/* =========================================================
+   RESPONSIVE AJOUTÉ
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .nav-inner{
+        flex-direction:column;
+        padding:20px 0;
+        gap:18px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .archive-item{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .archive-link{
+        width:max-content;
+    }
+
+    .impressum-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .logo{
+        font-size:3.5rem;
+        letter-spacing:5px;
+    }
+
+    .feature h2{
+        font-size:2.5rem;
+    }
+
+    .nav-menu{
+        gap:14px;
+    }
+
+    .nav-menu a{
+        font-size:.72rem;
+        letter-spacing:1px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#accueil" class="nav-brand">
+            NEXARIUM
+        </a>
+
+        <ul class="nav-menu">
+
+            <li>
+                <a href="#accueil">Accueil</a>
+            </li>
+
+            <li>
+                <a href="#revue">La revue</a>
+            </li>
+
+            <li>
+                <a href="#patrimoine">Patrimoine</a>
+            </li>
+
+            <li>
+                <a href="#archives">Archives</a>
+            </li>
+
+            <li>
+                <a href="#impressum">Impressum</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero" id="accueil">
+
+    <h1 class="logo">
+        NEXARIUM
+    </h1>
+
+    <div class="subtitle">
+        REVUE TRIMESTRIELLE · 1ER TRIMESTRE 2026 · VOL. 1, NO. 1
+    </div>
+
+    <p class="tagline">
+        Le patrimoine visuel de demain.
+        Une revue dédiée à l'art, à l'architecture,
+        à la photographie, au patrimoine et aux expressions
+        culturelles modernes et contemporaines.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     REVUE
+     ===================================================== -->
+
+<section class="section" id="revue">
+
+    <h2 class="section-title">
+        Le patrimoine visuel de demain
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Art
+            </h3>
+
+            <p>
+                NEXARIUM explore les pratiques artistiques,
+                les créateurs et les mouvements qui participent
+                à la transformation de notre culture visuelle.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Architecture
+            </h3>
+
+            <p>
+                Des architectures historiques aux réalisations
+                contemporaines, nous étudions les espaces comme
+                des témoins durables de notre civilisation.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Photographie
+            </h3>
+
+            <p>
+                L'image comme mémoire, comme document et comme
+                langage artistique. Une lecture attentive des
+                nouvelles formes de représentation du monde.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Culture
+            </h3>
+
+            <p>
+                Patrimoine, design, savoir-faire, esthétique
+                et création contemporaine se rencontrent dans
+                une réflexion consacrée aux évolutions culturelles.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature">
+
+        <h2>
+            NEXARIUM
+        </h2>
+
+        <p>
+            Plus qu'une publication, NEXARIUM est un espace
+            éditorial consacré à la conservation, à l'analyse
+            et à la transmission du patrimoine visuel.
+            Chaque édition établit un dialogue entre les héritages
+            du passé et les formes culturelles de demain.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PATRIMOINE
+     ===================================================== -->
+
+<section class="section" id="patrimoine">
+
+    <h2 class="section-title">
+        Culture visuelle
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Héritage
+            </h3>
+
+            <p>
+                Les œuvres, les bâtiments, les images et les objets
+                constituent une mémoire collective qui mérite d'être
+                étudiée, documentée et transmise.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Transmission
+            </h3>
+
+            <p>
+                Comprendre notre patrimoine permet de mieux saisir
+                les formes nouvelles qui apparaissent aujourd'hui
+                et leur place dans l'histoire culturelle.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Contemporain
+            </h3>
+
+            <p>
+                NEXARIUM porte son regard sur les transformations
+                esthétiques, technologiques et culturelles qui
+                redéfinissent notre environnement visuel.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ARCHIVES
+     ===================================================== -->
+
+<section class="section" id="archives">
+
+    <h2 class="section-title">
+        Archives
+    </h2>
+
+    <div class="archive-list">
+
+        <article class="archive-item">
+
+            <div class="archive-date">
+                1er trimestre 2026
+            </div>
+
+            <div class="archive-content">
+
+                <h3>
+                    Le patrimoine visuel de demain
+                </h3>
+
+                <p>
+                    Volume 1 · Numéro 1
+                </p>
+
+            </div>
+
+            <a href="#revue" class="archive-link">
+                Consulter
+            </a>
+
+        </article>
+
+
+        <article class="archive-item">
+
+            <div class="archive-date">
+                2e trimestre 2026
+            </div>
+
+            <div class="archive-content">
+
+                <h3>
+                    Prochaine édition
+                </h3>
+
+                <p>
+                    Volume 1 · Numéro 2
+                </p>
+
+            </div>
+
+            <span class="archive-link">
+                À paraître
+            </span>
+
+        </article>
+
+
+        <article class="archive-item">
+
+            <div class="archive-date">
+                Collection NEXARIUM
+            </div>
+
+            <div class="archive-content">
+
+                <h3>
+                    Collection éditoriale
+                </h3>
+
+                <p>
+                    Dossiers, recherches et publications de la revue.
+                </p>
+
+            </div>
+
+            <span class="archive-link">
+                À venir
+            </span>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMPRESSUM
+     ===================================================== -->
+
+<section class="section" id="impressum">
+
+    <h2 class="section-title">
+        Impressum
+    </h2>
+
+
+    <div class="impressum-grid">
+
+
+        <div class="impressum-card">
+
+            <h3>
+                Éditeur
+            </h3>
+
+            <p>
+                NEXARIUM est une revue trimestrielle consacrée
+                à la culture visuelle moderne et contemporaine.
+                <br><br>
+                Éditée par l'association <strong>NVO987</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="impressum-card">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Pour toute correspondance éditoriale,
+                demande professionnelle ou proposition de collaboration :
+                <br><br>
+
+                <a href="mailto:contact@nvo987.fr">
+                    contact@nvo987.fr
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="impressum-card">
+
+            <h3>
+                Édition
+            </h3>
+
+            <p>
+                Revue trimestrielle.
+                <br>
+                Volume 1 · Numéro 1 · 2026
+                <br>
+                Édition numérique.
+            </p>
+
+        </div>
+
+
+        <div class="impressum-card">
+
+            <h3>
+                Identité web
+            </h3>
+
+            <p>
+                Référence numérique :
+                <br><br>
+
+                <a
+                    href="https://nvo987.us"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    nvo987.us
+                </a>
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="footer-brand">
+        NEXARIUM
+    </div>
+
+    <div class="footer-copy">
+        Revue trimestrielle · Culture visuelle moderne et contemporaine
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#accueil">
+            Accueil
+        </a>
+
+        <a href="#revue">
+            La revue
+        </a>
+
+        <a href="#patrimoine">
+            Patrimoine
+        </a>
+
+        <a href="#archives">
+            Archives
+        </a>
+
+        <a href="#impressum">
+            Impressum
+        </a>
+
+        <a href="mailto:contact@nvo987.fr">
+            contact@nvo987.fr
+        </a>
+
+        <a
+            href="https://nvo987.us"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Web · Identity
+        </a>
+
+    </div>
+
+    <div class="footer-copy">
+        © 2026 NEXARIUM · NVO987 · Tous droits réservés
+    </div>
+
+</footer>
+
+
+</body>
+              </html> 
