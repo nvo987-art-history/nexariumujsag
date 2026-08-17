@@ -1,23 +1,44 @@
 /* =========================================================
-   NEXARIUM — STYLE
+   NEXARIUM — STYLE.CSS
    Editorial / Contemporary Journal Design
+   Responsive layout
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
 :root {
     --paper: #f3f0e9;
     --paper-soft: #e9e5dc;
+
     --ink: #171714;
     --muted: #68665f;
+
     --line: #c9c4b8;
+
     --accent: #9d1f27;
     --accent-dark: #77171d;
+
     --white: #faf9f5;
+
+    --footer-line: #373631;
+    --footer-muted: #aaa79f;
+
     --max: 1240px;
 }
 
-* {
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -28,11 +49,17 @@ html {
 }
 
 body {
+    min-width: 320px;
+
     background: var(--paper);
     color: var(--ink);
+
     font-family: "DM Sans", Arial, sans-serif;
+    font-size: 16px;
     line-height: 1.65;
+
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -41,8 +68,15 @@ a {
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
 
@@ -51,68 +85,138 @@ img {
    ========================================================= */
 
 .site-header {
+    width: 100%;
+
+    background: rgba(243, 240, 233, 0.98);
+
     border-bottom: 1px solid var(--line);
-    background: rgba(243, 240, 233, 0.96);
+
+    position: relative;
+    z-index: 100;
 }
 
 .header-inner {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
+
     min-height: 82px;
+
+    margin: 0 auto;
     padding: 0 34px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 40px;
 }
 
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
 .brand {
-    display: flex;
+    min-width: 0;
+
+    display: inline-flex;
     align-items: center;
+
     gap: 16px;
+
+    flex-shrink: 1;
 }
 
 .brand-mark {
     width: 34px;
     height: 34px;
+
+    flex: 0 0 34px;
+
     border: 2px solid var(--ink);
 
     display: grid;
     place-items: center;
 
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", Georgia, serif;
     font-size: 15px;
     font-weight: 700;
 }
 
 .brand-name {
-    font-family: "Playfair Display", serif;
+    min-width: 0;
+
+    font-family: "Playfair Display", Georgia, serif;
     font-size: 21px;
-    letter-spacing: 0.12em;
+    line-height: 1.15;
+
+    letter-spacing: .08em;
     font-weight: 600;
 }
 
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
 .main-nav {
+    flex: 0 0 auto;
+
     display: flex;
-    gap: 32px;
     align-items: center;
+    justify-content: flex-end;
+
+    gap: 28px;
 }
 
 .main-nav a {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    padding: 8px 0;
+
     color: #42413c;
 
-    transition: color .2s ease;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    letter-spacing: .075em;
+    text-transform: uppercase;
+
+    transition:
+        color .2s ease,
+        opacity .2s ease;
+}
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width .2s ease;
 }
 
 .main-nav a:hover {
     color: var(--accent);
 }
 
-.nav-archive {
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.main-nav .nav-archive {
     color: var(--accent) !important;
 }
 
@@ -122,36 +226,50 @@ img {
    ========================================================= */
 
 .hero {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 115px 34px 125px;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.35fr .65fr;
+
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+
     gap: 90px;
+
     align-items: end;
 }
 
 .eyebrow {
     display: flex;
     align-items: center;
+
     gap: 12px;
 
     margin-bottom: 28px;
 
+    color: var(--accent);
+
     font-size: 12px;
+    line-height: 1.2;
     font-weight: 600;
+
     letter-spacing: .18em;
     text-transform: uppercase;
-    color: var(--accent);
 }
 
 .eyebrow::before {
     content: "";
+
     width: 42px;
     height: 1px;
+
+    flex: 0 0 42px;
+
     background: var(--accent);
 }
 
@@ -159,8 +277,10 @@ img {
     max-width: 850px;
 
     font-family: "Playfair Display", Georgia, serif;
+
     font-size: clamp(62px, 9vw, 128px);
     line-height: .88;
+
     letter-spacing: -.045em;
     font-weight: 500;
 }
@@ -171,98 +291,130 @@ img {
 
 .hero-intro {
     max-width: 600px;
+
     margin-top: 40px;
 
+    color: #3d3b36;
+
     font-family: "Playfair Display", Georgia, serif;
+
     font-size: clamp(21px, 2.3vw, 30px);
     line-height: 1.42;
-    color: #3d3b36;
 }
 
 .hero-side {
-    border-top: 1px solid var(--ink);
     padding-top: 22px;
+
+    border-top: 1px solid var(--ink);
 }
 
 .hero-side-label {
     margin-bottom: 18px;
 
+    color: var(--muted);
+
     font-size: 11px;
+    line-height: 1.3;
     font-weight: 600;
+
     letter-spacing: .16em;
     text-transform: uppercase;
-    color: var(--muted);
 }
 
 .hero-side p {
+    color: #45433e;
+
     font-size: 15px;
     line-height: 1.75;
-    color: #45433e;
 }
 
 .hero-rule {
+    width: 100%;
     height: 1px;
-    background: var(--ink);
+
     margin-top: 75px;
+
+    background: var(--ink);
 }
 
 
 /* =========================================================
-   INTRODUCTION
+   GENERAL SECTION
    ========================================================= */
 
 .section {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 110px 34px;
 }
 
 .section-dark {
+    width: 100%;
+    max-width: none;
+
     background: var(--ink);
     color: var(--white);
-    max-width: none;
 }
 
 .section-dark-inner {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 110px 34px;
 }
 
 .section-heading {
     display: grid;
-    grid-template-columns: 270px 1fr;
+
+    grid-template-columns: 270px minmax(0, 1fr);
+
     gap: 70px;
 
-    border-top: 1px solid currentColor;
     padding-top: 25px;
+
+    border-top: 1px solid currentColor;
 }
 
 .section-number {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .15em;
     color: var(--accent);
+
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 600;
+
+    letter-spacing: .15em;
 }
 
 .section-title {
+    max-width: 900px;
+
     font-family: "Playfair Display", Georgia, serif;
+
     font-size: clamp(38px, 5vw, 66px);
     line-height: 1.05;
+
     font-weight: 500;
+
     letter-spacing: -.025em;
 }
 
 .section-content {
-    margin-left: 340px;
     max-width: 760px;
+
     margin-top: 55px;
+    margin-left: 340px;
 }
 
 .section-content p {
+    color: #55524b;
+
     font-size: 18px;
     line-height: 1.85;
-    color: #55524b;
 }
 
 .section-dark .section-content p {
@@ -275,10 +427,11 @@ img {
    ========================================================= */
 
 .principles {
-    margin-top: 90px;
-
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    margin-top: 90px;
 
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
@@ -286,6 +439,7 @@ img {
 
 .principle {
     padding: 42px 35px 48px;
+
     border-right: 1px solid var(--line);
 }
 
@@ -294,23 +448,30 @@ img {
 }
 
 .principle-number {
-    font-family: "Playfair Display", serif;
-    font-size: 18px;
-    color: var(--accent);
     margin-bottom: 25px;
+
+    color: var(--accent);
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
 }
 
 .principle h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 28px;
-    font-weight: 500;
     margin-bottom: 18px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-weight: 500;
 }
 
 .principle p {
+    color: var(--muted);
+
     font-size: 14px;
     line-height: 1.8;
-    color: var(--muted);
 }
 
 
@@ -319,83 +480,115 @@ img {
    ========================================================= */
 
 .domains {
-    margin-top: 90px;
-
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-top: 90px;
 
     border-top: 1px solid currentColor;
 }
 
 .domain {
-    padding: 32px 0;
-    border-bottom: 1px solid rgba(255,255,255,.18);
-
     display: flex;
+
     gap: 35px;
+
+    padding: 32px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
 }
 
 .domain-index {
     min-width: 45px;
 
-    font-size: 11px;
-    letter-spacing: .12em;
     color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: .12em;
 }
 
 .domain h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 28px;
-    font-weight: 500;
     margin-bottom: 8px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-weight: 500;
 }
 
 .domain p {
+    color: #aaa79f;
+
     font-size: 14px;
     line-height: 1.7;
-    color: #aaa79f;
 }
 
 
 /* =========================================================
-   COLLECTION / ISSUES
+   ISSUES HEADER
    ========================================================= */
 
 .issues-header {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 115px 34px 60px;
 
     display: flex;
+
     justify-content: space-between;
-    align-items: end;
-    gap: 40px;
+    align-items: flex-end;
+
+    gap: 50px;
 }
 
 .issues-header h2 {
     font-family: "Playfair Display", Georgia, serif;
+
     font-size: clamp(45px, 6vw, 78px);
     line-height: 1;
+
     font-weight: 500;
+
     letter-spacing: -.035em;
 }
 
 .issues-header p {
     max-width: 390px;
+
     color: var(--muted);
+
     font-size: 14px;
+    line-height: 1.75;
 }
 
+
+/* =========================================================
+   ISSUES
+   ========================================================= */
+
 .issues {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 0 34px 120px;
 }
 
 .issue {
     display: grid;
-    grid-template-columns: 110px 1fr 180px;
+
+    grid-template-columns: 110px minmax(0, 1fr) 180px;
+
     gap: 45px;
+
     align-items: center;
 
     padding: 42px 0;
@@ -412,40 +605,50 @@ img {
 }
 
 .issue:hover {
-    padding-left: 18px;
     padding-right: 18px;
-    background: rgba(157,31,39,.035);
+    padding-left: 18px;
+
+    background: rgba(157, 31, 39, .035);
 }
 
 .issue-number {
-    font-family: "Playfair Display", serif;
-    font-size: 18px;
     color: var(--accent);
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
 }
 
 .issue-info .date {
     margin-bottom: 7px;
 
+    color: var(--muted);
+
     font-size: 11px;
+    line-height: 1.3;
     font-weight: 600;
+
     letter-spacing: .16em;
     text-transform: uppercase;
-    color: var(--muted);
 }
 
 .issue-info h3 {
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", Georgia, serif;
+
     font-size: 32px;
     line-height: 1.15;
+
     font-weight: 500;
 }
 
 .issue-info p {
     max-width: 650px;
+
     margin-top: 12px;
 
-    font-size: 14px;
     color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .issue-link {
@@ -453,14 +656,17 @@ img {
 
     display: inline-flex;
     align-items: center;
+
     gap: 14px;
 
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 
     border-bottom: 1px solid var(--ink);
 
     font-size: 12px;
+    line-height: 1.3;
     font-weight: 600;
+
     letter-spacing: .08em;
     text-transform: uppercase;
 
@@ -471,56 +677,73 @@ img {
 
 .issue-link::after {
     content: "→";
+
     font-size: 17px;
+    line-height: 1;
 }
 
 .issue-link:hover {
     color: var(--accent);
+
     border-color: var(--accent);
 }
 
 
 /* =========================================================
-   CLOSING STATEMENT
+   CLOSING
    ========================================================= */
 
 .closing {
+    width: 100%;
+
     background: var(--paper-soft);
+
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
 
 .closing-inner {
+    width: 100%;
     max-width: 920px;
-    margin: auto;
+
+    margin: 0 auto;
+
     padding: 120px 34px;
 
     text-align: center;
 }
 
 .closing-label {
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
     font-size: 11px;
+    line-height: 1.3;
     font-weight: 600;
+
     letter-spacing: .18em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 28px;
 }
 
 .closing h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", Georgia, serif;
+
     font-size: clamp(38px, 5vw, 62px);
     line-height: 1.15;
+
     font-weight: 500;
 }
 
 .closing p {
     max-width: 650px;
+
     margin: 30px auto 0;
+
+    color: var(--muted);
 
     font-size: 17px;
     line-height: 1.8;
-    color: var(--muted);
 }
 
 
@@ -529,107 +752,388 @@ img {
    ========================================================= */
 
 footer {
+    width: 100%;
+
     background: var(--ink);
     color: var(--white);
 }
 
 .footer-inner {
+    width: 100%;
     max-width: var(--max);
-    margin: auto;
-    padding: 55px 34px 35px;
+
+    margin: 0 auto;
+
+    padding: 65px 34px 30px;
 }
 
 .footer-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+    display: grid;
 
-    padding-bottom: 45px;
-    border-bottom: 1px solid #373631;
-}
+    grid-template-columns: minmax(0, 1fr) auto;
 
-.footer-brand {
-    font-family: "Playfair Display", serif;
-    font-size: 31px;
-    letter-spacing: .08em;
-}
+    gap: 80px;
 
-.footer-description {
-    max-width: 420px;
-    margin-top: 12px;
+    padding-bottom: 50px;
 
-    color: #aaa79f;
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-.footer-nav {
-    display: flex;
-    gap: 30px;
-    align-items: start;
-}
-
-.footer-nav a {
-    font-size: 12px;
-    color: #d0cdc5;
-}
-
-.footer-nav a:hover {
-    color: white;
-}
-
-.footer-bottom {
-    padding-top: 25px;
-
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-
-    color: #77756f;
-    font-size: 11px;
+    border-bottom: 1px solid var(--footer-line);
 }
 
 
 /* =========================================================
-   MOBILE
+   FOOTER BRAND
+   ========================================================= */
+
+.footer-brand {
+    color: var(--white);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 34px;
+    line-height: 1;
+
+    letter-spacing: .08em;
+}
+
+.footer-description {
+    max-width: 460px;
+
+    margin-top: 18px;
+
+    color: var(--footer-muted);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER NAVIGATION
+   ========================================================= */
+
+.footer-nav {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    gap: 34px;
+
+    padding-top: 5px;
+}
+
+.footer-nav a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 5px 0;
+
+    color: #d0cdc5;
+
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+
+    letter-spacing: .06em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease,
+        opacity .2s ease;
+}
+
+.footer-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width .2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--white);
+}
+
+.footer-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding-top: 25px;
+
+    color: #77756f;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.footer-bottom span {
+    display: block;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header-inner {
+        padding: 0 25px;
+        gap: 25px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .main-nav {
+        gap: 20px;
+    }
+
+    .main-nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 90px 25px 100px;
+    }
+
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(250px, .55fr);
+        gap: 55px;
+    }
+
+    .section,
+    .section-dark-inner {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .section-heading {
+        grid-template-columns: 210px minmax(0, 1fr);
+        gap: 45px;
+    }
+
+    .section-content {
+        margin-left: 255px;
+    }
+
+    .issues-header,
+    .issues {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .issue {
+        grid-template-columns: 90px minmax(0, 1fr) 160px;
+        gap: 30px;
+    }
+
+    .footer-inner {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .footer-top {
+        gap: 45px;
+    }
+
+    .footer-nav {
+        gap: 22px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 800px
    ========================================================= */
 
 @media (max-width: 800px) {
 
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .site-header {
+        background: var(--paper);
+    }
+
     .header-inner {
-        min-height: 72px;
-        padding: 0 20px;
+        min-height: 0;
+
+        padding: 18px 20px 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 0;
     }
 
-    .main-nav {
-        gap: 14px;
+    .brand {
+        width: 100%;
+
+        min-height: 42px;
+
+        padding-bottom: 17px;
+
+        gap: 12px;
+
+        justify-content: flex-start;
     }
 
-    .main-nav a {
-        font-size: 10px;
+    .brand-mark {
+        width: 30px;
+        height: 30px;
+
+        flex: 0 0 30px;
+
+        font-size: 13px;
     }
 
     .brand-name {
-        font-size: 17px;
+        font-size: 18px;
+        line-height: 1.2;
+
+        letter-spacing: .06em;
     }
 
+    .main-nav {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        border-top: 1px solid var(--line);
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav a {
+        flex: 0 0 auto;
+
+        min-height: 48px;
+
+        display: inline-flex;
+        align-items: center;
+
+        padding: 0 14px;
+
+        font-size: 10px;
+        letter-spacing: .07em;
+    }
+
+    .main-nav a:first-child {
+        padding-left: 0;
+        padding-right: 18px;
+    }
+
+    .main-nav a:last-child {
+        padding-right: 0;
+    }
+
+    .main-nav a::after {
+        bottom: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
+
     .hero {
-        padding: 75px 20px 85px;
+        padding: 70px 20px 80px;
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
+
         gap: 55px;
     }
 
+    .eyebrow {
+        margin-bottom: 25px;
+
+        font-size: 11px;
+        letter-spacing: .16em;
+    }
+
+    .eyebrow::before {
+        width: 36px;
+        flex-basis: 36px;
+    }
+
     .hero h1 {
-        font-size: clamp(57px, 18vw, 90px);
+        max-width: 100%;
+
+        font-size: clamp(54px, 17vw, 88px);
+
+        line-height: .9;
     }
 
     .hero-intro {
-        font-size: 21px;
         margin-top: 28px;
+
+        font-size: 21px;
+        line-height: 1.45;
     }
+
+    .hero-side {
+        padding-top: 20px;
+    }
+
+    .hero-side p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero-rule {
+        margin-top: 55px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+       ----------------------------------------------------- */
 
     .section {
         padding: 75px 20px;
@@ -641,25 +1145,47 @@ footer {
 
     .section-heading {
         grid-template-columns: 1fr;
+
         gap: 20px;
+
+        padding-top: 20px;
+    }
+
+    .section-number {
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: clamp(37px, 10vw, 52px);
+        line-height: 1.05;
     }
 
     .section-content {
-        margin-left: 0;
+        max-width: none;
+
         margin-top: 35px;
+        margin-left: 0;
     }
 
     .section-content p {
         font-size: 16px;
-        line-height: 1.75;
+        line-height: 1.78;
     }
+
+
+    /* -----------------------------------------------------
+       PRINCIPLES
+       ----------------------------------------------------- */
 
     .principles {
         grid-template-columns: 1fr;
+
         margin-top: 60px;
     }
 
     .principle {
+        padding: 35px 0 38px;
+
         border-right: 0;
         border-bottom: 1px solid var(--line);
     }
@@ -668,19 +1194,62 @@ footer {
         border-bottom: 0;
     }
 
+    .principle h3 {
+        font-size: 27px;
+    }
+
+
+    /* -----------------------------------------------------
+       DOMAINS
+       ----------------------------------------------------- */
+
     .domains {
         grid-template-columns: 1fr;
+
         margin-top: 60px;
     }
 
+    .domain {
+        gap: 20px;
+
+        padding: 27px 0;
+    }
+
+    .domain-index {
+        min-width: 35px;
+    }
+
+    .domain h3 {
+        font-size: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       ISSUES HEADER
+       ----------------------------------------------------- */
+
     .issues-header {
-        padding: 80px 20px 45px;
         display: block;
+
+        padding: 80px 20px 45px;
+    }
+
+    .issues-header h2 {
+        font-size: clamp(45px, 13vw, 65px);
     }
 
     .issues-header p {
+        max-width: 100%;
+
         margin-top: 25px;
+
+        font-size: 14px;
     }
+
+
+    /* -----------------------------------------------------
+       ISSUES
+       ----------------------------------------------------- */
 
     .issues {
         padding: 0 20px 80px;
@@ -688,56 +1257,223 @@ footer {
 
     .issue {
         grid-template-columns: 1fr;
-        gap: 18px;
+
+        gap: 16px;
+
         padding: 32px 0;
     }
 
     .issue:hover {
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
+
+        background: transparent;
+    }
+
+    .issue-number {
+        font-size: 17px;
+    }
+
+    .issue-info h3 {
+        font-size: 29px;
+    }
+
+    .issue-info p {
+        font-size: 14px;
     }
 
     .issue-link {
         justify-self: start;
+
         margin-top: 8px;
     }
+
+
+    /* -----------------------------------------------------
+       CLOSING
+       ----------------------------------------------------- */
 
     .closing-inner {
         padding: 80px 20px;
     }
 
+    .closing-label {
+        margin-bottom: 22px;
+    }
+
+    .closing h2 {
+        font-size: clamp(36px, 10vw, 50px);
+    }
+
+    .closing p {
+        margin-top: 25px;
+
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
     .footer-inner {
-        padding: 45px 20px 25px;
+        padding: 55px 20px 28px;
     }
 
     .footer-top {
-        display: block;
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-bottom: 40px;
+    }
+
+    .footer-brand {
+        font-size: 30px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+
+        margin-top: 15px;
+
+        font-size: 13px;
+        line-height: 1.75;
     }
 
     .footer-nav {
-        margin-top: 30px;
-        flex-wrap: wrap;
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 0;
+
+        padding-top: 0;
+    }
+
+    .footer-nav a {
+        min-height: 48px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 12px 0;
+
+        border-top: 1px solid var(--footer-line);
+
+        font-size: 11px;
+        letter-spacing: .06em;
+    }
+
+    .footer-nav a:nth-child(odd) {
+        margin-right: 20px;
+    }
+
+    .footer-nav a:nth-child(even) {
+        margin-left: 20px;
+    }
+
+    .footer-nav a:last-child {
+        border-bottom: 1px solid var(--footer-line);
+    }
+
+    .footer-nav a::after {
+        display: none;
     }
 
     .footer-bottom {
         display: block;
+
+        padding-top: 22px;
     }
 
-    .footer-bottom span + span {
-        display: block;
+    .footer-bottom span {
         margin-top: 8px;
+    }
+
+    .footer-bottom span:first-child {
+        margin-top: 0;
     }
 }
 
 
+/* =========================================================
+   SMALL MOBILE — 480px
+   ========================================================= */
+
 @media (max-width: 480px) {
 
-    .main-nav a:nth-child(2) {
-        display: none;
+    .header-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .brand {
+        padding-bottom: 15px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+        letter-spacing: .045em;
+    }
+
+    .brand-mark {
+        width: 28px;
+        height: 28px;
+
+        flex-basis: 28px;
+    }
+
+    .main-nav a {
+        min-height: 46px;
+
+        padding-left: 11px;
+        padding-right: 11px;
+
+        font-size: 9px;
+    }
+
+    .main-nav a:first-child {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+
+    .main-nav a:last-child {
+        padding-right: 0;
+    }
+
+    .hero {
+        padding: 65px 16px 70px;
     }
 
     .hero h1 {
         font-size: 58px;
+    }
+
+    .hero-intro {
+        font-size: 20px;
+    }
+
+    .section {
+        padding: 65px 16px;
+    }
+
+    .section-dark-inner {
+        padding: 65px 16px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .principle {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .domain {
@@ -747,4 +1483,110 @@ footer {
     .domain-index {
         margin-bottom: 8px;
     }
+
+    .issues-header {
+        padding: 70px 16px 40px;
+    }
+
+    .issues {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .issue-info h3 {
+        font-size: 27px;
+    }
+
+    .closing-inner {
+        padding: 70px 16px;
+    }
+
+    .closing h2 {
+        font-size: 36px;
+    }
+
+    .footer-inner {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .footer-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-nav a:nth-child(odd),
+    .footer-nav a:nth-child(even) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .footer-nav a {
+        min-height: 45px;
+    }
+
+    .footer-bottom {
+        font-size: 10px;
+    }
 }
+
+
+/* =========================================================
+   VERY SMALL SCREENS — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .brand-name {
+        font-size: 14px;
+    }
+
+    .main-nav a {
+        font-size: 8.5px;
+
+        letter-spacing: .04em;
+    }
+
+    .hero h1 {
+        font-size: 53px;
+    }
+
+    .hero-intro {
+        font-size: 19px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .closing h2 {
+        font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+   }
