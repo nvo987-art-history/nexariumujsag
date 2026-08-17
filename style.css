@@ -1,0 +1,2335 @@
+/* =========================================================
+   NEXARIUM — STYLE.CSS
+   Editorial / Contemporary Journal
+   Premium Responsive Typography System
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --paper: #f3f0e9;
+    --paper-soft: #e9e5dc;
+
+    --ink: #171714;
+    --ink-soft: #3d3b36;
+
+    --muted: #68665f;
+    --line: #c9c4b8;
+
+    --accent: #9d1f27;
+    --accent-dark: #77171d;
+
+    --white: #faf9f5;
+
+    --footer-bg: #11110f;
+    --footer-bg-soft: #191816;
+    --footer-card: rgba(255, 255, 255, .035);
+
+    --footer-line: rgba(255, 255, 255, .11);
+    --footer-line-soft: rgba(255, 255, 255, .065);
+
+    --footer-muted: #98958d;
+    --footer-soft: #d7d3ca;
+    --footer-white: #f5f2eb;
+
+    --max-width: 1240px;
+    --page-x: 34px;
+    --section-y: 110px;
+
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 320px;
+    width: 100%;
+    overflow-x: hidden;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    overflow-wrap: break-word;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   SITE HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(243, 240, 233, .98);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    width: min(100%, var(--max-width));
+
+    min-height: 82px;
+
+    margin-inline: auto;
+    padding-inline: var(--page-x);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    min-width: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 16px;
+
+    flex: 0 1 auto;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid var(--ink);
+
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.brand-name {
+    min-width: 0;
+
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.1;
+
+    font-weight: 600;
+    letter-spacing: .08em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: clamp(18px, 2.3vw, 30px);
+
+    flex: 0 0 auto;
+}
+
+.main-nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 0;
+
+    color: #42413c;
+
+    font-size: clamp(11px, .78vw, 13px);
+    line-height: 1.25;
+    font-weight: 600;
+
+    letter-spacing: .065em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease,
+        opacity .2s ease;
+}
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width .2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.main-nav .nav-archive {
+    color: var(--accent) !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: clamp(80px, 8vw, 115px) var(--page-x)
+             clamp(85px, 9vw, 125px);
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(260px, .65fr);
+
+    gap: clamp(50px, 7vw, 90px);
+
+    align-items: end;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
+    font-size: clamp(10px, .75vw, 12px);
+    line-height: 1.25;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 42px;
+    height: 1px;
+
+    flex: 0 0 42px;
+
+    background: var(--accent);
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-family: var(--serif);
+
+    /*
+     * Smooth desktop scaling.
+     * Nem ugrik túl nagyot 1080p és nagy monitor között.
+     */
+    font-size: clamp(58px, 7.8vw, 118px);
+    line-height: .9;
+
+    font-weight: 500;
+    letter-spacing: -.045em;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-intro {
+    max-width: 600px;
+
+    margin-top: 40px;
+
+    color: var(--ink-soft);
+
+    font-family: var(--serif);
+
+    font-size: clamp(20px, 1.85vw, 28px);
+    line-height: 1.45;
+}
+
+.hero-side {
+    padding-top: 22px;
+
+    border-top: 1px solid var(--ink);
+}
+
+.hero-side-label {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: clamp(10px, .72vw, 11px);
+    line-height: 1.35;
+    font-weight: 600;
+
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.hero-side p {
+    color: #45433e;
+
+    font-size: clamp(14px, 1vw, 15px);
+    line-height: 1.75;
+}
+
+.hero-rule {
+    width: 100%;
+    height: 1px;
+
+    margin-top: 75px;
+
+    background: var(--ink);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: var(--section-y) var(--page-x);
+}
+
+.section-dark {
+    width: 100%;
+
+    background: var(--ink);
+    color: var(--white);
+}
+
+.section-dark-inner {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: var(--section-y) var(--page-x);
+}
+
+.section-heading {
+    display: grid;
+
+    grid-template-columns: 270px minmax(0, 1fr);
+
+    gap: 70px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid currentColor;
+}
+
+.section-number {
+    color: var(--accent);
+
+    font-size: clamp(10px, .75vw, 12px);
+    line-height: 1.35;
+    font-weight: 600;
+
+    letter-spacing: .15em;
+}
+
+.section-title {
+    max-width: 900px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(40px, 4.5vw, 62px);
+    line-height: 1.06;
+
+    font-weight: 500;
+    letter-spacing: -.025em;
+}
+
+.section-content {
+    max-width: 760px;
+
+    margin-top: 55px;
+    margin-left: 340px;
+}
+
+.section-content p {
+    color: #55524b;
+
+    font-size: clamp(16px, 1.25vw, 18px);
+    line-height: 1.82;
+}
+
+.section-dark .section-content p {
+    color: #c9c6be;
+}
+
+
+/* =========================================================
+   PRINCIPLES
+   ========================================================= */
+
+.principles {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    margin-top: 90px;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.principle {
+    padding: 42px 35px 48px;
+
+    border-right: 1px solid var(--line);
+}
+
+.principle:last-child {
+    border-right: 0;
+}
+
+.principle-number {
+    margin-bottom: 25px;
+
+    color: var(--accent);
+
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.principle h3 {
+    margin-bottom: 18px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(24px, 2vw, 29px);
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+.principle p {
+    color: var(--muted);
+
+    font-size: clamp(14px, 1vw, 15px);
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DOMAINS
+   ========================================================= */
+
+.domains {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-top: 90px;
+
+    border-top: 1px solid currentColor;
+}
+
+.domain {
+    min-width: 0;
+
+    display: flex;
+
+    gap: 35px;
+
+    padding: 32px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
+}
+
+.domain-index {
+    min-width: 45px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    letter-spacing: .12em;
+}
+
+.domain h3 {
+    margin-bottom: 8px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(24px, 2vw, 29px);
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+.domain p {
+    color: #aaa79f;
+
+    font-size: clamp(13px, .95vw, 14px);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ISSUES HEADER
+   ========================================================= */
+
+.issues-header {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: clamp(80px, 8vw, 115px) var(--page-x) 60px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.issues-header h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(44px, 5.5vw, 74px);
+    line-height: 1;
+
+    font-weight: 500;
+    letter-spacing: -.035em;
+}
+
+.issues-header p {
+    max-width: 390px;
+
+    color: var(--muted);
+
+    font-size: clamp(13px, 1vw, 15px);
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   ISSUES
+   ========================================================= */
+
+.issues {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: 0 var(--page-x) 120px;
+}
+
+.issue {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr)
+        180px;
+
+    gap: 45px;
+
+    align-items: center;
+
+    padding: 42px 0;
+
+    border-top: 1px solid var(--line);
+
+    transition:
+        padding .25s ease,
+        background .25s ease;
+}
+
+.issue:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.issue:hover {
+    padding-inline: 18px;
+
+    background: rgba(157, 31, 39, .035);
+}
+
+.issue-number {
+    color: var(--accent);
+
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.issue-info {
+    min-width: 0;
+}
+
+.issue-info .date {
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: clamp(9px, .7vw, 11px);
+    line-height: 1.35;
+    font-weight: 600;
+
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.issue-info h3 {
+    font-family: var(--serif);
+
+    font-size: clamp(26px, 2.35vw, 32px);
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+.issue-info p {
+    max-width: 650px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: clamp(13px, 1vw, 15px);
+    line-height: 1.65;
+}
+
+.issue-link {
+    justify-self: end;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid var(--ink);
+
+    font-size: clamp(10px, .75vw, 12px);
+    line-height: 1.3;
+    font-weight: 600;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.issue-link::after {
+    content: "→";
+
+    font-size: 17px;
+    line-height: 1;
+}
+
+.issue-link:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.closing {
+    width: 100%;
+
+    background: var(--paper-soft);
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.closing-inner {
+    width: min(100%, 920px);
+
+    margin-inline: auto;
+
+    padding: 120px var(--page-x);
+
+    text-align: center;
+}
+
+.closing-label {
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
+    font-size: clamp(10px, .7vw, 11px);
+    line-height: 1.35;
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.closing h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 4.6vw, 60px);
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+.closing p {
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    color: var(--muted);
+
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            700px 420px at 92% -10%,
+            rgba(157, 31, 39, .16),
+            transparent 65%
+        ),
+        radial-gradient(
+            500px 400px at -10% 100%,
+            rgba(255, 255, 255, .025),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #1a1917 0%,
+            #11110f 55%,
+            #0d0d0c 100%
+        );
+
+    color: var(--footer-white);
+
+    border-top: 1px solid rgba(157, 31, 39, .45);
+}
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: min(100%, 1180px);
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(157, 31, 39, .35) 18%,
+            var(--accent) 50%,
+            rgba(157, 31, 39, .35) 82%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+.site-footer::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -270px;
+    bottom: -330px;
+
+    border: 1px solid rgba(255, 255, 255, .035);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 70px rgba(255, 255, 255, .012),
+        0 0 0 140px rgba(255, 255, 255, .008);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER INNER
+   ========================================================= */
+
+.site-footer .footer-inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: 82px var(--page-x) 48px;
+}
+
+
+/* =========================================================
+   FOOTER HEADER
+   ========================================================= */
+
+.site-footer .footer-header {
+    padding-bottom: 48px;
+
+    border-bottom: 1px solid var(--footer-line);
+}
+
+.site-footer .footer-brand {
+    display: block;
+
+    color: var(--footer-white);
+
+    font-family: var(--serif);
+
+    font-size: clamp(46px, 5.5vw, 76px);
+    line-height: .9;
+
+    font-weight: 500;
+
+    letter-spacing: .045em;
+}
+
+.site-footer .footer-organization {
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: var(--footer-muted);
+
+    font-size: clamp(12px, 1vw, 14px);
+    line-height: 1.7;
+
+    letter-spacing: .01em;
+}
+
+
+/* =========================================================
+   FOOTER GRID
+   ========================================================= */
+
+.site-footer .footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(0, .8fr)
+        minmax(0, .9fr);
+
+    gap: 0;
+
+    margin-top: 0;
+
+    border-bottom: 1px solid var(--footer-line);
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
+
+.site-footer .footer-column {
+    min-width: 0;
+
+    padding: 42px 38px 48px;
+
+    border-right: 1px solid var(--footer-line);
+}
+
+.site-footer .footer-column:first-child {
+    padding-left: 0;
+}
+
+.site-footer .footer-column:last-child {
+    padding-right: 0;
+
+    border-right: 0;
+}
+
+.site-footer .footer-column h3 {
+    margin-bottom: 30px;
+
+    color: var(--footer-white);
+
+    font-family: var(--sans);
+
+    font-size: clamp(9px, .72vw, 11px);
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOOTER ITEMS
+   ========================================================= */
+
+.site-footer .footer-item {
+    min-width: 0;
+
+    padding: 0 0 22px;
+}
+
+.site-footer .footer-item:last-child {
+    padding-bottom: 0;
+}
+
+.site-footer .footer-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--accent);
+
+    font-size: clamp(8px, .62vw, 9px);
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.site-footer .footer-value,
+.site-footer .footer-item > a {
+    display: block;
+
+    max-width: 100%;
+
+    color: var(--footer-soft);
+
+    font-size: clamp(12px, .9vw, 13px);
+    line-height: 1.75;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.site-footer .footer-mono {
+    font-family: var(--sans);
+
+    letter-spacing: .025em;
+}
+
+.site-footer .footer-item > a {
+    width: fit-content;
+
+    color: #d0ccc3;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.site-footer .footer-item > a:hover {
+    color: #ffffff;
+
+    border-color: var(--accent);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP — 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    :root {
+        --page-x: 28px;
+        --section-y: 95px;
+    }
+
+    .header-inner {
+        gap: 25px;
+    }
+
+    .main-nav {
+        gap: 19px;
+    }
+
+    .main-nav a {
+        font-size: 10.5px;
+    }
+
+    .hero-grid {
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(56px, 8.3vw, 96px);
+    }
+
+    .hero-intro {
+        font-size: 22px;
+    }
+
+    .section-heading {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 45px;
+    }
+
+    .section-content {
+        margin-left: 265px;
+    }
+
+    .section-title {
+        font-size: clamp(38px, 5vw, 56px);
+    }
+
+    .issue {
+        grid-template-columns:
+            80px
+            minmax(0, 1fr)
+            150px;
+
+        gap: 30px;
+    }
+
+    .issue-info h3 {
+        font-size: 27px;
+    }
+
+
+    /* Footer */
+
+    .site-footer .footer-grid {
+        grid-template-columns:
+            minmax(0, 1.1fr)
+            minmax(0, .9fr)
+            minmax(0, .9fr);
+    }
+
+    .site-footer .footer-column {
+        padding-inline: 28px;
+    }
+
+    .site-footer .footer-column:first-child {
+        padding-left: 0;
+    }
+
+    .site-footer .footer-column:last-child {
+        padding-right: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    :root {
+        --page-x: 24px;
+        --section-y: 82px;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header-inner {
+        min-height: 76px;
+    }
+
+    .brand {
+        gap: 12px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .brand-mark {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+
+    .main-nav {
+        gap: 13px;
+    }
+
+    .main-nav a {
+        font-size: 9.5px;
+        letter-spacing: .055em;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        padding-top: 78px;
+        padding-bottom: 88px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        max-width: 900px;
+
+        font-size: clamp(54px, 10.5vw, 88px);
+        line-height: .91;
+    }
+
+    .hero-intro {
+        max-width: 680px;
+
+        font-size: 22px;
+        line-height: 1.48;
+    }
+
+    .hero-side {
+        max-width: 620px;
+    }
+
+    .hero-side p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    .section-heading {
+        grid-template-columns: 170px minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .section-title {
+        font-size: clamp(36px, 6vw, 50px);
+    }
+
+    .section-content {
+        margin-left: 205px;
+    }
+
+    .section-content p {
+        font-size: 16px;
+    }
+
+    .principles {
+        margin-top: 70px;
+    }
+
+    .principle {
+        padding-inline: 25px;
+    }
+
+    .principle h3 {
+        font-size: 25px;
+    }
+
+    .principle p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       DOMAINS
+       ===================================================== */
+
+    .domain h3 {
+        font-size: 25px;
+    }
+
+    .domain p {
+        font-size: 13.5px;
+    }
+
+
+    /* =====================================================
+       ISSUES
+       ===================================================== */
+
+    .issues-header {
+        padding-top: 82px;
+    }
+
+    .issues-header h2 {
+        font-size: clamp(42px, 7vw, 62px);
+    }
+
+    .issues-header p {
+        font-size: 14px;
+    }
+
+    .issue {
+        grid-template-columns:
+            65px
+            minmax(0, 1fr)
+            130px;
+
+        gap: 22px;
+    }
+
+    .issue-info h3 {
+        font-size: 25px;
+    }
+
+    .issue-info p {
+        font-size: 13.5px;
+    }
+
+    .issue-link {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       CLOSING
+       ===================================================== */
+
+    .closing h2 {
+        font-size: clamp(36px, 5.5vw, 52px);
+    }
+
+    .closing p {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .site-footer .footer-inner {
+        padding-top: 68px;
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .site-footer .footer-column {
+        padding: 36px 28px 42px;
+    }
+
+    .site-footer .footer-column:nth-child(1) {
+        padding-left: 0;
+    }
+
+    .site-footer .footer-column:nth-child(2) {
+        padding-right: 0;
+
+        border-right: 0;
+    }
+
+    .site-footer .footer-column:nth-child(3) {
+        grid-column: 1 / -1;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        border-top: 1px solid var(--footer-line);
+        border-right: 0;
+    }
+
+    .site-footer .footer-brand {
+        font-size: clamp(44px, 8vw, 64px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    :root {
+        --page-x: 20px;
+        --section-y: 70px;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .site-header {
+        background: var(--paper);
+    }
+
+    .header-inner {
+        min-height: 0;
+
+        padding-top: 16px;
+        padding-bottom: 0;
+
+        display: block;
+    }
+
+    .brand {
+        width: 100%;
+
+        min-height: 40px;
+
+        padding-bottom: 16px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .brand-mark {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+
+        font-size: 13px;
+    }
+
+    .brand-name {
+        font-size: 17px;
+        letter-spacing: .055em;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+       ===================================================== */
+
+    .main-nav {
+        width: calc(100% + (var(--page-x) * 2));
+
+        margin-left: calc(var(--page-x) * -1);
+
+        padding-inline: var(--page-x);
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        border-top: 1px solid var(--line);
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav a {
+        flex: 0 0 auto;
+
+        min-height: 48px;
+
+        display: inline-flex;
+        align-items: center;
+
+        padding: 0 13px;
+
+        font-size: 10px;
+        letter-spacing: .055em;
+    }
+
+    .main-nav a:first-child {
+        padding-left: 0;
+    }
+
+    .main-nav a:last-child {
+        padding-right: 0;
+    }
+
+    .main-nav a::after {
+        bottom: 7px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        padding-top: 62px;
+        padding-bottom: 70px;
+    }
+
+    .hero-grid {
+        gap: 43px;
+    }
+
+    .eyebrow {
+        gap: 9px;
+
+        margin-bottom: 22px;
+
+        font-size: 10px;
+        letter-spacing: .15em;
+    }
+
+    .eyebrow::before {
+        width: 30px;
+        flex-basis: 30px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+
+        /*
+         * Sokkal kontrolláltabb mobil méret.
+         * 700px-nél kb. 68px,
+         * 360px-nél kb. 52px.
+         */
+        font-size: clamp(52px, 14vw, 76px);
+        line-height: .91;
+
+        letter-spacing: -.04em;
+    }
+
+    .hero-intro {
+        margin-top: 26px;
+
+        font-size: clamp(19px, 4.8vw, 22px);
+        line-height: 1.5;
+    }
+
+    .hero-side {
+        padding-top: 19px;
+    }
+
+    .hero-side-label {
+        margin-bottom: 13px;
+
+        font-size: 10px;
+    }
+
+    .hero-side p {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero-rule {
+        margin-top: 43px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    .section,
+    .section-dark-inner {
+        padding-top: var(--section-y);
+        padding-bottom: var(--section-y);
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding-top: 19px;
+    }
+
+    .section-number {
+        font-size: 10px;
+    }
+
+    .section-title {
+        max-width: 100%;
+
+        font-size: clamp(35px, 9.5vw, 48px);
+        line-height: 1.06;
+    }
+
+    .section-content {
+        max-width: none;
+
+        margin-top: 29px;
+        margin-left: 0;
+    }
+
+    .section-content p {
+        font-size: 16px;
+        line-height: 1.78;
+    }
+
+
+    /* =====================================================
+       PRINCIPLES
+       ===================================================== */
+
+    .principles {
+        grid-template-columns: 1fr;
+
+        margin-top: 52px;
+    }
+
+    .principle {
+        padding: 30px 0 34px;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .principle:last-child {
+        border-bottom: 0;
+    }
+
+    .principle-number {
+        margin-bottom: 16px;
+
+        font-size: 17px;
+    }
+
+    .principle h3 {
+        margin-bottom: 11px;
+
+        font-size: 25px;
+    }
+
+    .principle p {
+        font-size: 14.5px;
+        line-height: 1.78;
+    }
+
+
+    /* =====================================================
+       DOMAINS
+       ===================================================== */
+
+    .domains {
+        grid-template-columns: 1fr;
+
+        margin-top: 52px;
+    }
+
+    .domain {
+        gap: 18px;
+
+        padding: 26px 0;
+    }
+
+    .domain-index {
+        min-width: 34px;
+
+        font-size: 10px;
+    }
+
+    .domain h3 {
+        font-size: 24px;
+    }
+
+    .domain p {
+        font-size: 14px;
+        line-height: 1.72;
+    }
+
+
+    /* =====================================================
+       ISSUES HEADER
+       ===================================================== */
+
+    .issues-header {
+        display: block;
+
+        padding-top: 70px;
+        padding-bottom: 38px;
+    }
+
+    .issues-header h2 {
+        font-size: clamp(41px, 12vw, 56px);
+    }
+
+    .issues-header p {
+        max-width: none;
+
+        margin-top: 21px;
+
+        font-size: 14.5px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       ISSUES
+       ===================================================== */
+
+    .issues {
+        padding-bottom: 72px;
+    }
+
+    .issue {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+        padding: 30px 0;
+    }
+
+    .issue:hover {
+        padding-inline: 0;
+
+        background: transparent;
+    }
+
+    .issue-number {
+        margin-bottom: 12px;
+
+        font-size: 17px;
+    }
+
+    .issue-info .date {
+        margin-bottom: 6px;
+
+        font-size: 10px;
+    }
+
+    .issue-info h3 {
+        font-size: clamp(25px, 7vw, 29px);
+        line-height: 1.16;
+    }
+
+    .issue-info p {
+        margin-top: 10px;
+
+        font-size: 14.5px;
+        line-height: 1.72;
+    }
+
+    .issue-link {
+        justify-self: start;
+
+        margin-top: 19px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       CLOSING
+       ===================================================== */
+
+    .closing-inner {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .closing-label {
+        margin-bottom: 19px;
+
+        font-size: 10px;
+    }
+
+    .closing h2 {
+        font-size: clamp(34px, 9.5vw, 48px);
+        line-height: 1.15;
+    }
+
+    .closing p {
+        margin-top: 21px;
+
+        font-size: 15px;
+        line-height: 1.78;
+    }
+
+
+    /* =====================================================
+       FOOTER — MOBILE
+       ===================================================== */
+
+    .site-footer {
+        border-top-width: 1px;
+    }
+
+    .site-footer::after {
+        width: 300px;
+        height: 300px;
+
+        right: -180px;
+        bottom: -190px;
+    }
+
+    .site-footer .footer-inner {
+        width: 100%;
+
+        padding-top: 52px;
+        padding-bottom: 30px;
+    }
+
+
+    /* Footer header */
+
+    .site-footer .footer-header {
+        padding-bottom: 33px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: clamp(38px, 12vw, 55px);
+        line-height: .92;
+
+        letter-spacing: .035em;
+    }
+
+    .site-footer .footer-organization {
+        max-width: 100%;
+
+        margin-top: 17px;
+
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+
+    /* Footer grid */
+
+    .site-footer .footer-grid {
+        display: block;
+
+        margin-top: 0;
+
+        border-bottom: 0;
+    }
+
+
+    /* Footer columns */
+
+    .site-footer .footer-column,
+    .site-footer .footer-column:first-child,
+    .site-footer .footer-column:last-child {
+        padding: 29px 0 30px;
+
+        border-right: 0;
+        border-top: 1px solid var(--footer-line);
+    }
+
+    .site-footer .footer-column:first-child {
+        border-top: 0;
+    }
+
+    .site-footer .footer-column h3 {
+        margin-bottom: 21px;
+
+        font-size: 9px;
+        letter-spacing: .18em;
+    }
+
+
+    /* Footer items */
+
+    .site-footer .footer-item {
+        padding-bottom: 18px;
+    }
+
+    .site-footer .footer-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .site-footer .footer-label {
+        margin-bottom: 5px;
+
+        font-size: 8px;
+        line-height: 1.4;
+        letter-spacing: .14em;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .site-footer .footer-item > a:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    :root {
+        --page-x: 16px;
+        --section-y: 63px;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header-inner {
+        padding-top: 14px;
+    }
+
+    .brand {
+        padding-bottom: 14px;
+    }
+
+    .brand-mark {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+
+        font-size: 12px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+        letter-spacing: .04em;
+    }
+
+    .main-nav {
+        width: calc(100% + 32px);
+        margin-left: -16px;
+
+        padding-inline: 16px;
+    }
+
+    .main-nav a {
+        min-height: 45px;
+
+        padding-inline: 10px;
+
+        font-size: 9.5px;
+        letter-spacing: .05em;
+    }
+
+    .main-nav a:first-child {
+        padding-left: 0;
+    }
+
+    .main-nav a:last-child {
+        padding-right: 0;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        padding-top: 56px;
+        padding-bottom: 63px;
+    }
+
+    .hero h1 {
+        font-size: clamp(49px, 15vw, 62px);
+    }
+
+    .hero-intro {
+        font-size: 18px;
+        line-height: 1.52;
+    }
+
+    .hero-side p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    .section-title {
+        font-size: clamp(34px, 9.5vw, 40px);
+    }
+
+    .section-content p {
+        font-size: 15px;
+    }
+
+    .principle h3 {
+        font-size: 24px;
+    }
+
+    .principle p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       DOMAINS
+       ===================================================== */
+
+    .domain {
+        display: block;
+    }
+
+    .domain-index {
+        margin-bottom: 8px;
+    }
+
+    .domain h3 {
+        font-size: 23px;
+    }
+
+    .domain p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       ISSUES
+       ===================================================== */
+
+    .issues-header {
+        padding-top: 63px;
+        padding-bottom: 35px;
+    }
+
+    .issues-header h2 {
+        font-size: 42px;
+    }
+
+    .issues-header p {
+        font-size: 14px;
+    }
+
+    .issue-info h3 {
+        font-size: 25px;
+    }
+
+    .issue-info p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       CLOSING
+       ===================================================== */
+
+    .closing-inner {
+        padding-top: 63px;
+        padding-bottom: 63px;
+    }
+
+    .closing h2 {
+        font-size: 33px;
+    }
+
+    .closing p {
+        font-size: 14.5px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .site-footer::after {
+        width: 230px;
+        height: 230px;
+
+        right: -145px;
+        bottom: -145px;
+    }
+
+    .site-footer .footer-inner {
+        padding-top: 44px;
+        padding-bottom: 24px;
+    }
+
+    .site-footer .footer-header {
+        padding-bottom: 29px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: 35px;
+    }
+
+    .site-footer .footer-organization {
+        margin-top: 15px;
+
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .site-footer .footer-column,
+    .site-footer .footer-column:first-child,
+    .site-footer .footer-column:last-child {
+        padding-top: 26px;
+        padding-bottom: 27px;
+    }
+
+    .site-footer .footer-column h3 {
+        margin-bottom: 19px;
+
+        font-size: 9px;
+    }
+
+    .site-footer .footer-item {
+        padding-bottom: 16px;
+    }
+
+    .site-footer .footer-label {
+        font-size: 8px;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        font-size: 12px;
+        line-height: 1.72;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    :root {
+        --page-x: 14px;
+        --section-y: 58px;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .brand-name {
+        font-size: 15px;
+    }
+
+    .main-nav a {
+        /*
+         * Nem megy 9px alá.
+         * A navigáció vízszintesen görgethető.
+         */
+        font-size: 9px;
+        letter-spacing: .03em;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        padding-top: 52px;
+        padding-bottom: 58px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        line-height: .92;
+    }
+
+    .hero-intro {
+        font-size: 17.5px;
+        line-height: 1.53;
+    }
+
+    .hero-side p {
+        font-size: 13.5px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-content p {
+        font-size: 14.5px;
+    }
+
+    .principle h3 {
+        font-size: 23px;
+    }
+
+    .principle p {
+        font-size: 13.8px;
+    }
+
+
+    /* =====================================================
+       DOMAINS
+       ===================================================== */
+
+    .domain h3 {
+        font-size: 22px;
+    }
+
+    .domain p {
+        font-size: 13.5px;
+    }
+
+
+    /* =====================================================
+       ISSUES
+       ===================================================== */
+
+    .issues-header {
+        padding-top: 58px;
+        padding-bottom: 32px;
+    }
+
+    .issues-header h2 {
+        font-size: 38px;
+    }
+
+    .issues-header p {
+        font-size: 13.8px;
+    }
+
+    .issue-info h3 {
+        font-size: 24px;
+    }
+
+    .issue-info p {
+        font-size: 13.8px;
+    }
+
+
+    /* =====================================================
+       CLOSING
+       ===================================================== */
+
+    .closing-inner {
+        padding-top: 58px;
+        padding-bottom: 58px;
+    }
+
+    .closing h2 {
+        font-size: 30px;
+    }
+
+    .closing p {
+        font-size: 13.8px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .site-footer::after {
+        width: 190px;
+        height: 190px;
+
+        right: -120px;
+        bottom: -120px;
+    }
+
+    .site-footer .footer-inner {
+        padding-top: 39px;
+        padding-bottom: 20px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: 30px;
+        letter-spacing: .025em;
+    }
+
+    .site-footer .footer-organization {
+        font-size: 11.5px;
+        line-height: 1.72;
+    }
+
+    .site-footer .footer-column,
+    .site-footer .footer-column:first-child,
+    .site-footer .footer-column:last-child {
+        padding-top: 23px;
+        padding-bottom: 24px;
+    }
+
+    .site-footer .footer-column h3 {
+        margin-bottom: 17px;
+
+        font-size: 8px;
+    }
+
+    .site-footer .footer-label {
+        font-size: 8px;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
