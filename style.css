@@ -1,0 +1,2587 @@
+/* =========================================================
+   NEXARIUM — STYLE.CSS
+   Responsive Editorial System
+   Desktop / Tablet / Mobile
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --paper: #f3f0e9;
+    --paper-soft: #e9e5dc;
+
+    --ink: #171714;
+    --ink-soft: #3d3b36;
+
+    --muted: #68665f;
+    --line: #c9c4b8;
+
+    --accent: #9d1f27;
+    --accent-dark: #77171d;
+
+    --white: #faf9f5;
+
+    --footer-bg: #11110f;
+    --footer-bg-soft: #191816;
+    --footer-card: rgba(255, 255, 255, .035);
+
+    --footer-line: rgba(255, 255, 255, .12);
+    --footer-line-soft: rgba(255, 255, 255, .07);
+
+    --footer-muted: #aaa69d;
+    --footer-soft: #dedad1;
+    --footer-white: #f5f2eb;
+
+    --max-width: 1240px;
+
+    --page-x: 34px;
+    --section-y: 110px;
+
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-width: 320px;
+
+    scroll-behavior: smooth;
+
+    overflow-x: hidden;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+
+    overflow-x: hidden;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-family: var(--sans);
+
+    /*
+     * Normál alapméret.
+     */
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(243, 240, 233, .98);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+    width: min(100%, var(--max-width));
+
+    min-height: 82px;
+
+    margin-inline: auto;
+
+    padding-inline: var(--page-x);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    min-width: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 16px;
+
+    flex: 0 1 auto;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid var(--ink);
+
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.brand-name {
+    min-width: 0;
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+    line-height: 1.15;
+
+    font-weight: 600;
+
+    letter-spacing: .06em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: clamp(18px, 2.3vw, 30px);
+
+    flex: 0 0 auto;
+}
+
+.main-nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 0;
+
+    color: #42413c;
+
+    /*
+     * Nem engedjük 11px alá desktopon sem.
+     */
+    font-size: clamp(11px, .82vw, 14px);
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    letter-spacing: .055em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease,
+        opacity .2s ease;
+}
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width .2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.main-nav .nav-archive {
+    color: var(--accent) !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding:
+        clamp(80px, 8vw, 115px)
+        var(--page-x)
+        clamp(85px, 9vw, 125px);
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(260px, .65fr);
+
+    gap: clamp(50px, 7vw, 90px);
+
+    align-items: end;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
+    font-size: clamp(11px, .78vw, 13px);
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 42px;
+    height: 1px;
+
+    flex: 0 0 42px;
+
+    background: var(--accent);
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(58px, 7.8vw, 118px);
+
+    line-height: .9;
+
+    font-weight: 500;
+
+    letter-spacing: -.045em;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-intro {
+    max-width: 680px;
+
+    margin-top: 40px;
+
+    color: var(--ink-soft);
+
+    font-family: var(--serif);
+
+    font-size: clamp(21px, 1.85vw, 29px);
+
+    line-height: 1.48;
+}
+
+.hero-side {
+    padding-top: 22px;
+
+    border-top: 1px solid var(--ink);
+}
+
+.hero-side-label {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: clamp(11px, .75vw, 13px);
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+}
+
+.hero-side p {
+    color: #45433e;
+
+    font-size: clamp(15px, 1vw, 17px);
+
+    line-height: 1.8;
+}
+
+.hero-rule {
+    width: 100%;
+    height: 1px;
+
+    margin-top: 75px;
+
+    background: var(--ink);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding:
+        var(--section-y)
+        var(--page-x);
+}
+
+.section-dark {
+    width: 100%;
+
+    background: var(--ink);
+
+    color: var(--white);
+}
+
+.section-dark-inner {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding:
+        var(--section-y)
+        var(--page-x);
+}
+
+.section-heading {
+    display: grid;
+
+    grid-template-columns: 270px minmax(0, 1fr);
+
+    gap: 70px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid currentColor;
+}
+
+.section-number {
+    color: var(--accent);
+
+    font-size: clamp(11px, .78vw, 13px);
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    letter-spacing: .14em;
+}
+
+.section-title {
+    max-width: 900px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(40px, 4.5vw, 62px);
+
+    line-height: 1.08;
+
+    font-weight: 500;
+
+    letter-spacing: -.025em;
+}
+
+.section-content {
+    max-width: 760px;
+
+    margin-top: 55px;
+    margin-left: 340px;
+}
+
+.section-content p {
+    color: #55524b;
+
+    font-size: clamp(17px, 1.25vw, 19px);
+
+    line-height: 1.82;
+}
+
+.section-dark .section-content p {
+    color: #d0ccc4;
+}
+
+
+/* =========================================================
+   PRINCIPLES
+   ========================================================= */
+
+.principles {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    margin-top: 90px;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.principle {
+    padding: 42px 35px 48px;
+
+    border-right: 1px solid var(--line);
+}
+
+.principle:last-child {
+    border-right: 0;
+}
+
+.principle-number {
+    margin-bottom: 25px;
+
+    color: var(--accent);
+
+    font-family: var(--serif);
+
+    font-size: 20px;
+
+    line-height: 1.2;
+}
+
+.principle h3 {
+    margin-bottom: 18px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(25px, 2vw, 30px);
+
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+.principle p {
+    color: var(--muted);
+
+    font-size: clamp(16px, 1vw, 17px);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DOMAINS
+   ========================================================= */
+
+.domains {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-top: 90px;
+
+    border-top: 1px solid currentColor;
+}
+
+.domain {
+    min-width: 0;
+
+    display: flex;
+
+    gap: 35px;
+
+    padding: 32px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .18);
+}
+
+.domain-index {
+    min-width: 45px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    letter-spacing: .1em;
+}
+
+.domain h3 {
+    margin-bottom: 8px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(25px, 2vw, 30px);
+
+    line-height: 1.2;
+
+    font-weight: 500;
+}
+
+.domain p {
+    color: #aaa79f;
+
+    font-size: clamp(16px, .95vw, 17px);
+
+    line-height: 1.72;
+}
+
+
+/* =========================================================
+   ISSUES HEADER
+   ========================================================= */
+
+.issues-header {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding:
+        clamp(80px, 8vw, 115px)
+        var(--page-x)
+        60px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.issues-header h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(44px, 5.5vw, 74px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -.035em;
+}
+
+.issues-header p {
+    max-width: 390px;
+
+    color: var(--muted);
+
+    font-size: clamp(15px, 1vw, 17px);
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   ISSUES
+   ========================================================= */
+
+.issues {
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding:
+        0
+        var(--page-x)
+        120px;
+}
+
+.issue {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr)
+        180px;
+
+    gap: 45px;
+
+    align-items: center;
+
+    padding: 42px 0;
+
+    border-top: 1px solid var(--line);
+
+    transition:
+        padding .25s ease,
+        background .25s ease;
+}
+
+.issue:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.issue:hover {
+    padding-inline: 18px;
+
+    background: rgba(157, 31, 39, .035);
+}
+
+.issue-number {
+    color: var(--accent);
+
+    font-family: var(--serif);
+
+    font-size: 20px;
+
+    line-height: 1.2;
+}
+
+.issue-info {
+    min-width: 0;
+}
+
+.issue-info .date {
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: clamp(11px, .7vw, 13px);
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+.issue-info h3 {
+    font-family: var(--serif);
+
+    font-size: clamp(27px, 2.35vw, 34px);
+
+    line-height: 1.17;
+
+    font-weight: 500;
+}
+
+.issue-info p {
+    max-width: 650px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: clamp(16px, 1vw, 17px);
+
+    line-height: 1.7;
+}
+
+.issue-link {
+    justify-self: end;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid var(--ink);
+
+    font-size: clamp(11px, .75vw, 13px);
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    letter-spacing: .07em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.issue-link::after {
+    content: "→";
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+.issue-link:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.closing {
+    width: 100%;
+
+    background: var(--paper-soft);
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.closing-inner {
+    width: min(100%, 920px);
+
+    margin-inline: auto;
+
+    padding: 120px var(--page-x);
+
+    text-align: center;
+}
+
+.closing-label {
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
+    font-size: clamp(11px, .7vw, 13px);
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+.closing h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 4.6vw, 60px);
+
+    line-height: 1.15;
+
+    font-weight: 500;
+}
+
+.closing p {
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    color: var(--muted);
+
+    font-size: clamp(16px, 1.2vw, 18px);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            700px 420px at 92% -10%,
+            rgba(157, 31, 39, .16),
+            transparent 65%
+        ),
+        radial-gradient(
+            500px 400px at -10% 100%,
+            rgba(255, 255, 255, .025),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #1a1917 0%,
+            #11110f 55%,
+            #0d0d0c 100%
+        );
+
+    color: var(--footer-white);
+
+    border-top: 1px solid rgba(157, 31, 39, .45);
+}
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: min(100%, 1180px);
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(157, 31, 39, .35) 18%,
+            var(--accent) 50%,
+            rgba(157, 31, 39, .35) 82%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+.site-footer::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -270px;
+    bottom: -330px;
+
+    border: 1px solid rgba(255, 255, 255, .035);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 70px rgba(255, 255, 255, .012),
+        0 0 0 140px rgba(255, 255, 255, .008);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER INNER
+   ========================================================= */
+
+.site-footer .footer-inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, var(--max-width));
+
+    margin-inline: auto;
+
+    padding: 82px var(--page-x) 48px;
+}
+
+
+/* =========================================================
+   FOOTER HEADER
+   ========================================================= */
+
+.site-footer .footer-header {
+    padding-bottom: 48px;
+
+    border-bottom: 1px solid var(--footer-line);
+}
+
+.site-footer .footer-brand {
+    display: block;
+
+    color: var(--footer-white);
+
+    font-family: var(--serif);
+
+    font-size: clamp(46px, 5.5vw, 76px);
+
+    line-height: .95;
+
+    font-weight: 500;
+
+    letter-spacing: .04em;
+}
+
+.site-footer .footer-organization {
+    max-width: 700px;
+
+    margin-top: 22px;
+
+    color: var(--footer-muted);
+
+    /*
+     * Font minimum: 15px
+     */
+    font-size: clamp(15px, 1vw, 17px);
+
+    line-height: 1.75;
+
+    letter-spacing: .005em;
+}
+
+
+/* =========================================================
+   FOOTER GRID
+   ========================================================= */
+
+.site-footer .footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(0, .8fr)
+        minmax(0, .9fr);
+
+    gap: 0;
+
+    margin-top: 0;
+
+    border-bottom: 1px solid var(--footer-line);
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
+
+.site-footer .footer-column {
+    min-width: 0;
+
+    padding: 42px 38px 48px;
+
+    border-right: 1px solid var(--footer-line);
+}
+
+.site-footer .footer-column:first-child {
+    padding-left: 0;
+}
+
+.site-footer .footer-column:last-child {
+    padding-right: 0;
+
+    border-right: 0;
+}
+
+.site-footer .footer-column h3 {
+    margin-bottom: 30px;
+
+    color: var(--footer-white);
+
+    font-family: var(--sans);
+
+    /*
+     * Nem 8-9px.
+     */
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOOTER ITEMS
+   ========================================================= */
+
+.site-footer .footer-item {
+    min-width: 0;
+
+    padding: 0 0 24px;
+}
+
+.site-footer .footer-item:last-child {
+    padding-bottom: 0;
+}
+
+.site-footer .footer-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #c02b34;
+
+    /*
+     * Olvasható footer label.
+     */
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    font-weight: 600;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+.site-footer .footer-value,
+.site-footer .footer-item > a {
+    display: block;
+
+    max-width: 100%;
+
+    color: var(--footer-soft);
+
+    /*
+     * Ez volt az egyik fő probléma.
+     * 12px helyett minimum 16px.
+     */
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.site-footer .footer-mono {
+    font-family: var(--sans);
+
+    letter-spacing: .02em;
+}
+
+.site-footer .footer-item > a {
+    width: fit-content;
+
+    color: #dedad1;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.site-footer .footer-item > a:hover {
+    color: #ffffff;
+
+    border-color: var(--accent);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    :root {
+        --page-x: 28px;
+        --section-y: 95px;
+    }
+
+    .header-inner {
+        gap: 25px;
+    }
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    .hero-grid {
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(56px, 8.3vw, 96px);
+    }
+
+    .hero-intro {
+        font-size: 22px;
+    }
+
+    .section-heading {
+        grid-template-columns: 220px minmax(0, 1fr);
+
+        gap: 45px;
+    }
+
+    .section-content {
+        margin-left: 265px;
+    }
+
+    .section-title {
+        font-size: clamp(38px, 5vw, 56px);
+    }
+
+    .issue {
+        grid-template-columns:
+            80px
+            minmax(0, 1fr)
+            150px;
+
+        gap: 30px;
+    }
+
+    .issue-info h3 {
+        font-size: 28px;
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns:
+            minmax(0, 1.1fr)
+            minmax(0, .9fr)
+            minmax(0, .9fr);
+    }
+
+    .site-footer .footer-column {
+        padding-inline: 28px;
+    }
+
+    .site-footer .footer-column:first-child {
+        padding-left: 0;
+    }
+
+    .site-footer .footer-column:last-child {
+        padding-right: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    :root {
+        --page-x: 24px;
+        --section-y: 82px;
+    }
+
+
+    /* HEADER */
+
+    .header-inner {
+        min-height: 76px;
+    }
+
+    .brand {
+        gap: 12px;
+    }
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+    .brand-mark {
+        width: 32px;
+        height: 32px;
+
+        flex-basis: 32px;
+    }
+
+    .main-nav {
+        gap: 13px;
+    }
+
+    .main-nav a {
+        font-size: 11px;
+
+        letter-spacing: .045em;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding-top: 78px;
+        padding-bottom: 88px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero h1 {
+        max-width: 900px;
+
+        font-size: clamp(54px, 10.5vw, 88px);
+
+        line-height: .92;
+    }
+
+    .hero-intro {
+        max-width: 680px;
+
+        font-size: 22px;
+
+        line-height: 1.5;
+    }
+
+    .hero-side {
+        max-width: 680px;
+    }
+
+    .hero-side p {
+        font-size: 16px;
+    }
+
+
+    /* SECTIONS */
+
+    .section-heading {
+        grid-template-columns: 170px minmax(0, 1fr);
+
+        gap: 35px;
+    }
+
+    .section-title {
+        font-size: clamp(36px, 6vw, 50px);
+    }
+
+    .section-content {
+        margin-left: 205px;
+    }
+
+    .section-content p {
+        font-size: 17px;
+    }
+
+
+    /* PRINCIPLES */
+
+    .principles {
+        margin-top: 70px;
+    }
+
+    .principle {
+        padding-inline: 25px;
+    }
+
+    .principle h3 {
+        font-size: 26px;
+    }
+
+    .principle p {
+        font-size: 16px;
+    }
+
+
+    /* DOMAINS */
+
+    .domain h3 {
+        font-size: 26px;
+    }
+
+    .domain p {
+        font-size: 16px;
+    }
+
+
+    /* ISSUES */
+
+    .issues-header {
+        padding-top: 82px;
+    }
+
+    .issues-header h2 {
+        font-size: clamp(42px, 7vw, 62px);
+    }
+
+    .issues-header p {
+        font-size: 16px;
+    }
+
+    .issue {
+        grid-template-columns:
+            65px
+            minmax(0, 1fr)
+            130px;
+
+        gap: 22px;
+    }
+
+    .issue-info h3 {
+        font-size: 26px;
+    }
+
+    .issue-info p {
+        font-size: 16px;
+    }
+
+    .issue-link {
+        font-size: 11px;
+    }
+
+
+    /* CLOSING */
+
+    .closing h2 {
+        font-size: clamp(36px, 5.5vw, 52px);
+    }
+
+    .closing p {
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer .footer-inner {
+        padding-top: 68px;
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .site-footer .footer-column {
+        padding: 36px 28px 42px;
+    }
+
+    .site-footer .footer-column:nth-child(1) {
+        padding-left: 0;
+    }
+
+    .site-footer .footer-column:nth-child(2) {
+        padding-right: 0;
+
+        border-right: 0;
+    }
+
+    .site-footer .footer-column:nth-child(3) {
+        grid-column: 1 / -1;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        border-top: 1px solid var(--footer-line);
+        border-right: 0;
+    }
+
+    .site-footer .footer-brand {
+        font-size: clamp(44px, 8vw, 64px);
+    }
+
+    .site-footer .footer-organization {
+        font-size: 16px;
+    }
+
+    .site-footer .footer-column h3 {
+        font-size: 12px;
+    }
+
+    .site-footer .footer-label {
+        font-size: 11px;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    :root {
+        --page-x: 20px;
+        --section-y: 70px;
+    }
+
+    body {
+        /*
+         * Mobilon sem megy 14-15px-re.
+         */
+        font-size: 17px;
+
+        line-height: 1.72;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .site-header {
+        background: var(--paper);
+    }
+
+    .header-inner {
+        min-height: 0;
+
+        padding-top: 16px;
+        padding-bottom: 0;
+
+        display: block;
+    }
+
+    .brand {
+        width: 100%;
+
+        min-height: 42px;
+
+        padding-bottom: 16px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .brand-mark {
+        width: 30px;
+        height: 30px;
+
+        flex-basis: 30px;
+
+        font-size: 13px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+
+        letter-spacing: .04em;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+       ===================================================== */
+
+    .main-nav {
+        width: calc(100% + (var(--page-x) * 2));
+
+        margin-left: calc(var(--page-x) * -1);
+
+        padding-inline: var(--page-x);
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        border-top: 1px solid var(--line);
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav a {
+        flex: 0 0 auto;
+
+        min-height: 50px;
+
+        display: inline-flex;
+        align-items: center;
+
+        padding: 0 14px;
+
+        /*
+         * Mobil nav minimum 12px.
+         */
+        font-size: 12px;
+
+        line-height: 1.3;
+
+        letter-spacing: .035em;
+    }
+
+    .main-nav a:first-child {
+        padding-left: 0;
+    }
+
+    .main-nav a:last-child {
+        padding-right: 0;
+    }
+
+    .main-nav a::after {
+        bottom: 7px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        padding-top: 62px;
+        padding-bottom: 70px;
+    }
+
+    .hero-grid {
+        gap: 43px;
+    }
+
+    .eyebrow {
+        gap: 10px;
+
+        margin-bottom: 22px;
+
+        font-size: 11px;
+
+        letter-spacing: .13em;
+    }
+
+    .eyebrow::before {
+        width: 30px;
+
+        flex-basis: 30px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+
+        /*
+         * 360px-en kb. 50px,
+         * 480px-en kb. 62px,
+         * 700px-en kb. 76px.
+         */
+        font-size: clamp(50px, 13vw, 76px);
+
+        line-height: .93;
+
+        letter-spacing: -.04em;
+    }
+
+    .hero-intro {
+        margin-top: 28px;
+
+        /*
+         * A képen látható nagy, olvasható tördelés.
+         */
+        font-size: clamp(20px, 5vw, 23px);
+
+        line-height: 1.5;
+    }
+
+    .hero-side {
+        padding-top: 20px;
+    }
+
+    .hero-side-label {
+        margin-bottom: 14px;
+
+        font-size: 11px;
+
+        letter-spacing: .14em;
+    }
+
+    .hero-side p {
+        font-size: 16px;
+
+        line-height: 1.78;
+    }
+
+    .hero-rule {
+        margin-top: 44px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    .section,
+    .section-dark-inner {
+        padding-top: var(--section-y);
+        padding-bottom: var(--section-y);
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding-top: 20px;
+    }
+
+    .section-number {
+        font-size: 11px;
+    }
+
+    .section-title {
+        max-width: 100%;
+
+        font-size: clamp(36px, 9vw, 50px);
+
+        line-height: 1.08;
+    }
+
+    .section-content {
+        max-width: none;
+
+        margin-top: 31px;
+        margin-left: 0;
+    }
+
+    .section-content p {
+        /*
+         * FONTOS:
+         * nem 14-15px.
+         */
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       PRINCIPLES
+       ===================================================== */
+
+    .principles {
+        grid-template-columns: 1fr;
+
+        margin-top: 52px;
+    }
+
+    .principle {
+        padding: 32px 0 36px;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .principle:last-child {
+        border-bottom: 0;
+    }
+
+    .principle-number {
+        margin-bottom: 16px;
+
+        font-size: 19px;
+    }
+
+    .principle h3 {
+        margin-bottom: 12px;
+
+        font-size: 26px;
+
+        line-height: 1.2;
+    }
+
+    .principle p {
+        /*
+         * Minimum 16px.
+         */
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       DOMAINS
+       ===================================================== */
+
+    .domains {
+        grid-template-columns: 1fr;
+
+        margin-top: 52px;
+    }
+
+    .domain {
+        gap: 18px;
+
+        padding: 28px 0;
+    }
+
+    .domain-index {
+        min-width: 36px;
+
+        font-size: 12px;
+    }
+
+    .domain h3 {
+        font-size: 26px;
+
+        line-height: 1.2;
+    }
+
+    .domain p {
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       ISSUES HEADER
+       ===================================================== */
+
+    .issues-header {
+        display: block;
+
+        padding-top: 70px;
+        padding-bottom: 40px;
+    }
+
+    .issues-header h2 {
+        font-size: clamp(42px, 11vw, 58px);
+    }
+
+    .issues-header p {
+        max-width: none;
+
+        margin-top: 22px;
+
+        font-size: 16px;
+
+        line-height: 1.78;
+    }
+
+
+    /* =====================================================
+       ISSUES
+       ===================================================== */
+
+    .issues {
+        padding-bottom: 72px;
+    }
+
+    .issue {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+        padding: 32px 0;
+    }
+
+    .issue:hover {
+        padding-inline: 0;
+
+        background: transparent;
+    }
+
+    .issue-number {
+        margin-bottom: 13px;
+
+        font-size: 19px;
+    }
+
+    .issue-info .date {
+        margin-bottom: 7px;
+
+        font-size: 11px;
+
+        letter-spacing: .13em;
+    }
+
+    .issue-info h3 {
+        font-size: clamp(26px, 7vw, 32px);
+
+        line-height: 1.18;
+    }
+
+    .issue-info p {
+        margin-top: 11px;
+
+        font-size: 16px;
+
+        line-height: 1.78;
+    }
+
+    .issue-link {
+        justify-self: start;
+
+        margin-top: 21px;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       CLOSING
+       ===================================================== */
+
+    .closing-inner {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .closing-label {
+        margin-bottom: 20px;
+
+        font-size: 11px;
+    }
+
+    .closing h2 {
+        font-size: clamp(35px, 9vw, 50px);
+
+        line-height: 1.15;
+    }
+
+    .closing p {
+        margin-top: 22px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       FOOTER MOBILE
+       ===================================================== */
+
+    .site-footer {
+        border-top-width: 1px;
+    }
+
+    .site-footer::after {
+        width: 300px;
+        height: 300px;
+
+        right: -180px;
+        bottom: -190px;
+    }
+
+    .site-footer .footer-inner {
+        width: 100%;
+
+        padding-top: 55px;
+        padding-bottom: 32px;
+    }
+
+
+    /* FOOTER HEADER */
+
+    .site-footer .footer-header {
+        padding-bottom: 35px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: clamp(40px, 11vw, 56px);
+
+        line-height: .95;
+
+        letter-spacing: .025em;
+    }
+
+    .site-footer .footer-organization {
+        max-width: 100%;
+
+        margin-top: 18px;
+
+        /*
+         * 13px helyett 16px.
+         */
+        font-size: 16px;
+
+        line-height: 1.78;
+    }
+
+
+    /* FOOTER GRID */
+
+    .site-footer .footer-grid {
+        display: block;
+
+        margin-top: 0;
+
+        border-bottom: 0;
+    }
+
+
+    /* FOOTER COLUMNS */
+
+    .site-footer .footer-column,
+    .site-footer .footer-column:first-child,
+    .site-footer .footer-column:last-child {
+        padding: 32px 0 34px;
+
+        border-right: 0;
+
+        border-top: 1px solid var(--footer-line);
+    }
+
+    .site-footer .footer-column:first-child {
+        border-top: 0;
+    }
+
+    .site-footer .footer-column h3 {
+        margin-bottom: 23px;
+
+        /*
+         * Korábban 9px volt.
+         */
+        font-size: 12px;
+
+        line-height: 1.4;
+
+        letter-spacing: .16em;
+    }
+
+
+    /* FOOTER ITEMS */
+
+    .site-footer .footer-item {
+        padding-bottom: 22px;
+    }
+
+    .site-footer .footer-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .site-footer .footer-label {
+        margin-bottom: 7px;
+
+        /*
+         * Korábban 8px.
+         */
+        font-size: 11px;
+
+        line-height: 1.45;
+
+        letter-spacing: .13em;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        /*
+         * Ez a lényegi javítás.
+         */
+        font-size: 16px;
+
+        line-height: 1.78;
+    }
+
+    .site-footer .footer-item > a:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    :root {
+        --page-x: 18px;
+        --section-y: 64px;
+    }
+
+    body {
+        font-size: 16px;
+
+        line-height: 1.72;
+    }
+
+
+    /* HEADER */
+
+    .header-inner {
+        padding-top: 14px;
+    }
+
+    .brand {
+        padding-bottom: 14px;
+    }
+
+    .brand-mark {
+        width: 29px;
+        height: 29px;
+
+        flex-basis: 29px;
+
+        font-size: 12px;
+    }
+
+    .brand-name {
+        font-size: 17px;
+
+        letter-spacing: .035em;
+    }
+
+    .main-nav {
+        width: calc(100% + 36px);
+
+        margin-left: -18px;
+
+        padding-inline: 18px;
+    }
+
+    .main-nav a {
+        min-height: 47px;
+
+        padding-inline: 11px;
+
+        /*
+         * 9.5px helyett 12px.
+         */
+        font-size: 12px;
+
+        letter-spacing: .025em;
+    }
+
+    .main-nav a:first-child {
+        padding-left: 0;
+    }
+
+    .main-nav a:last-child {
+        padding-right: 0;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding-top: 57px;
+        padding-bottom: 64px;
+    }
+
+    .hero h1 {
+        font-size: clamp(50px, 14.5vw, 64px);
+
+        line-height: .94;
+    }
+
+    .hero-intro {
+        font-size: 20px;
+
+        line-height: 1.52;
+    }
+
+    .hero-side p {
+        font-size: 16px;
+    }
+
+
+    /* SECTIONS */
+
+    .section-title {
+        font-size: clamp(35px, 9.5vw, 43px);
+    }
+
+    .section-content p {
+        font-size: 16px;
+    }
+
+    .principle h3 {
+        font-size: 25px;
+    }
+
+    .principle p {
+        font-size: 16px;
+    }
+
+
+    /* DOMAINS */
+
+    .domain {
+        display: block;
+
+        padding: 27px 0;
+    }
+
+    .domain-index {
+        margin-bottom: 9px;
+    }
+
+    .domain h3 {
+        font-size: 25px;
+    }
+
+    .domain p {
+        font-size: 16px;
+    }
+
+
+    /* ISSUES */
+
+    .issues-header {
+        padding-top: 64px;
+        padding-bottom: 36px;
+    }
+
+    .issues-header h2 {
+        font-size: 43px;
+    }
+
+    .issues-header p {
+        font-size: 16px;
+    }
+
+    .issue-info h3 {
+        font-size: 26px;
+    }
+
+    .issue-info p {
+        font-size: 16px;
+    }
+
+
+    /* CLOSING */
+
+    .closing-inner {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .closing h2 {
+        font-size: 35px;
+    }
+
+    .closing p {
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer::after {
+        width: 230px;
+        height: 230px;
+
+        right: -145px;
+        bottom: -145px;
+    }
+
+    .site-footer .footer-inner {
+        padding-top: 47px;
+        padding-bottom: 26px;
+    }
+
+    .site-footer .footer-header {
+        padding-bottom: 31px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: 37px;
+    }
+
+    .site-footer .footer-organization {
+        margin-top: 16px;
+
+        font-size: 15px;
+
+        line-height: 1.78;
+    }
+
+    .site-footer .footer-column,
+    .site-footer .footer-column:first-child,
+    .site-footer .footer-column:last-child {
+        padding-top: 28px;
+        padding-bottom: 29px;
+    }
+
+    .site-footer .footer-column h3 {
+        margin-bottom: 21px;
+
+        font-size: 11px;
+    }
+
+    .site-footer .footer-item {
+        padding-bottom: 19px;
+    }
+
+    .site-footer .footer-label {
+        font-size: 10px;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        /*
+         * Minden normál footer szöveg jól olvasható.
+         */
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    :root {
+        --page-x: 15px;
+        --section-y: 58px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+
+    /* HEADER */
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .main-nav {
+        width: calc(100% + 30px);
+
+        margin-left: -15px;
+
+        padding-inline: 15px;
+    }
+
+    .main-nav a {
+        /*
+         * SOHA NEM 8-9px.
+         */
+        font-size: 11px;
+
+        letter-spacing: .02em;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding-top: 52px;
+        padding-bottom: 58px;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+
+        line-height: .94;
+    }
+
+    .hero-intro {
+        font-size: 19px;
+
+        line-height: 1.54;
+    }
+
+    .hero-side p {
+        font-size: 16px;
+    }
+
+
+    /* SECTIONS */
+
+    .section-title {
+        font-size: 33px;
+    }
+
+    .section-content p {
+        font-size: 16px;
+    }
+
+    .principle h3 {
+        font-size: 24px;
+    }
+
+    .principle p {
+        font-size: 16px;
+    }
+
+
+    /* DOMAINS */
+
+    .domain h3 {
+        font-size: 24px;
+    }
+
+    .domain p {
+        font-size: 16px;
+    }
+
+
+    /* ISSUES */
+
+    .issues-header {
+        padding-top: 58px;
+        padding-bottom: 33px;
+    }
+
+    .issues-header h2 {
+        font-size: 39px;
+    }
+
+    .issues-header p {
+        font-size: 16px;
+    }
+
+    .issue-info h3 {
+        font-size: 25px;
+    }
+
+    .issue-info p {
+        font-size: 16px;
+    }
+
+
+    /* CLOSING */
+
+    .closing-inner {
+        padding-top: 58px;
+        padding-bottom: 58px;
+    }
+
+    .closing h2 {
+        font-size: 32px;
+    }
+
+    .closing p {
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer::after {
+        width: 190px;
+        height: 190px;
+
+        right: -120px;
+        bottom: -120px;
+    }
+
+    .site-footer .footer-inner {
+        padding-top: 41px;
+        padding-bottom: 22px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: 32px;
+
+        letter-spacing: .02em;
+    }
+
+    .site-footer .footer-organization {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .site-footer .footer-column,
+    .site-footer .footer-column:first-child,
+    .site-footer .footer-column:last-child {
+        padding-top: 25px;
+        padding-bottom: 26px;
+    }
+
+    .site-footer .footer-column h3 {
+        margin-bottom: 19px;
+
+        /*
+         * Minimum 11px.
+         */
+        font-size: 11px;
+    }
+
+    .site-footer .footer-label {
+        font-size: 10px;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        /*
+         * Minimum 16px még 360px-en is.
+         */
+        font-size: 16px;
+
+        line-height: 1.72;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 330px) {
+
+    :root {
+        --page-x: 14px;
+    }
+
+    .brand-name {
+        font-size: 15px;
+    }
+
+    .main-nav a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero-intro {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 31px;
+    }
+
+    .section-content p,
+    .principle p,
+    .domain p,
+    .issue-info p,
+    .closing p {
+        font-size: 16px;
+    }
+
+    .site-footer .footer-brand {
+        font-size: 30px;
+    }
+
+    .site-footer .footer-organization {
+        font-size: 15px;
+    }
+
+    .site-footer .footer-value,
+    .site-footer .footer-item > a {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+  }
