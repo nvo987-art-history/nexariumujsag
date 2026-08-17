@@ -228,3 +228,408 @@ footer{
 }
 
   } 
+/* =========================================
+   NEXARIUM — NAVIGATION & PREMIUM LINKS
+   ========================================= */
+
+.navigation{
+    width:90%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:25px 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:relative;
+    z-index:10;
+
+    animation:nexariumNavIn 1s ease both;
+}
+
+.navigation > a{
+    font-family:'Playfair Display', serif;
+    font-size:1.25rem;
+    letter-spacing:4px;
+    text-decoration:none;
+    color:#d4af37;
+
+    transition:
+        color .35s ease,
+        text-shadow .35s ease,
+        transform .35s ease;
+}
+
+.navigation > a:hover{
+    color:#f5e7a1;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,.45),
+        0 0 25px rgba(212,175,55,.2);
+
+    transform:translateY(-1px);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav-links a{
+    position:relative;
+
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.15rem;
+    letter-spacing:2px;
+
+    color:#d4af37;
+    text-decoration:none;
+
+    transition:
+        color .35s ease,
+        text-shadow .35s ease;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    bottom:-7px;
+
+    width:0;
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #f5e7a1,
+        transparent
+    );
+
+    transform:translateX(-50%);
+
+    transition:
+        width .4s ease,
+        box-shadow .4s ease;
+}
+
+.nav-links a:hover{
+    color:#fff4c7;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,.35);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+
+    box-shadow:
+        0 0 10px rgba(212,175,55,.5);
+}
+
+
+/* =========================================
+   HERO ENTRY ANIMATION
+   ========================================= */
+
+.hero-content{
+    animation:nexariumHeroIn 1.4s cubic-bezier(.22,1,.36,1) both;
+}
+
+.logo{
+    animation:nexariumLogoGlow 2s ease-out both;
+}
+
+.subtitle{
+    animation:nexariumFadeUp 1s .25s ease both;
+}
+
+.tagline{
+    animation:nexariumFadeUp 1s .45s ease both;
+}
+
+
+/* =========================================
+   SECTION ENTRY
+   ========================================= */
+
+.section{
+    animation:nexariumFadeUp 1.2s .2s ease both;
+}
+
+
+/* =========================================
+   PREMIUM CARD HOVER
+   ========================================= */
+
+.card{
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:'';
+
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:80%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,248,208,.07),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:left .8s ease;
+
+    pointer-events:none;
+}
+
+.card:hover::before{
+    left:140%;
+}
+
+
+/* =========================================
+   FEATURE HOVER
+   ========================================= */
+
+.feature{
+    position:relative;
+    overflow:hidden;
+
+    transition:
+        box-shadow .5s ease,
+        border-color .5s ease,
+        transform .5s ease;
+}
+
+.feature::before{
+    content:'';
+
+    position:absolute;
+    top:-100%;
+    left:50%;
+
+    width:500px;
+    height:300px;
+
+    transform:translateX(-50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(212,175,55,.09),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+    transition:top .7s ease;
+}
+
+.feature:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(212,175,55,.4);
+
+    box-shadow:
+        0 0 45px rgba(212,175,55,.10),
+        inset 0 0 40px rgba(212,175,55,.025);
+}
+
+.feature:hover::before{
+    top:-50px;
+}
+
+
+/* =========================================
+   FOOTER LINKS
+   ========================================= */
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:12px 30px;
+    margin-top:25px;
+}
+
+.footer-links a{
+    position:relative;
+
+    color:#b99a37;
+    text-decoration:none;
+
+    font-family:'Cormorant Garamond', serif;
+    font-size:1rem;
+    letter-spacing:1.5px;
+
+    transition:
+        color .35s ease,
+        text-shadow .35s ease;
+}
+
+.footer-links a::after{
+    content:'';
+
+    position:absolute;
+    left:50%;
+    bottom:-5px;
+
+    width:0;
+    height:1px;
+
+    background:#d4af37;
+
+    transform:translateX(-50%);
+
+    transition:
+        width .35s ease,
+        box-shadow .35s ease;
+}
+
+.footer-links a:hover{
+    color:#f5e7a1;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,.45);
+}
+
+.footer-links a:hover::after{
+    width:100%;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,.5);
+}
+
+
+/* =========================================
+   KEYFRAMES
+   ========================================= */
+
+@keyframes nexariumNavIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes nexariumHeroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes nexariumFadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes nexariumLogoGlow{
+
+    from{
+        opacity:0;
+        transform:scale(.96);
+
+        filter:
+            brightness(.7)
+            blur(2px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+
+        filter:
+            brightness(1)
+            blur(0);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:768px){
+
+    .navigation{
+        flex-direction:column;
+        gap:18px;
+        padding:20px 0;
+    }
+
+    .nav-links{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:1rem;
+        letter-spacing:1.5px;
+    }
+
+    .navigation > a{
+        font-size:1.1rem;
+    }
+
+    .footer-links{
+        flex-direction:column;
+        gap:14px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
+
+}
