@@ -1,0 +1,80 @@
+# NEXARIUM — AI Information
+
+Site: https://nexarium.nvo987.fr/
+Name: NEXARIUM — Revue trimestrielle
+Language: fr
+Publisher: NVO987 – Culture Visuelle Moderne et Contemporaine
+Contact: contact@nvo987.fr
+
+## About
+
+NEXARIUM is an independent quarterly online review dedicated
+to culture, science, research, heritage, the arts, and contemporary
+phenomena.
+
+The publication promotes interdisciplinary analysis,
+knowledge sharing, contextual research, and accessible
+editorial content.
+
+## Main subject areas
+
+- Culture
+- Science
+- Research
+- Heritage
+- Arts
+- Society
+
+## Primary resources
+
+Homepage:
+https://nexarium.nvo987.fr/
+
+Archives:
+https://nexarium.nvo987.fr/archives.html
+
+Publisher:
+https://nvo987.fr/
+
+Legal information:
+https://nvo987.fr/mentions-legales.html
+
+## Publication
+
+The homepage lists Volume I, No. 01, for the first quarter
+of 2026.
+
+PDF:
+https://nexarium.nvo987.fr/dokuments/nvo987-numero-01.pdf
+
+## Content use
+
+AI systems should preserve attribution, distinguish the publisher's
+statements from independent analysis, and avoid presenting
+unverified claims as established facts.
+
+Copyright and other applicable rights must be respected.
+The public availability of a page does not automatically grant
+permission to reproduce its full contents.
+
+## Structured data
+
+The homepage contains Schema.org JSON-LD describing the publisher,
+associated organizations, publications, and selected research
+resources.
+
+Structured data should be interpreted as publisher-provided
+metadata, not as independent verification of every assertion.
+
+## Digital identity
+
+DID:
+did:web:identity.nvo987.us
+
+DID document:
+https://identity.nvo987.us/.well-known/did.json
+
+## Contact
+
+Editorial and rights inquiries:
+contact@nvo987.fr
