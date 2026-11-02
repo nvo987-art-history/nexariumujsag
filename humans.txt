@@ -1,0 +1,53 @@
+/* TEAM */
+
+Site name: NEXARIUM — Revue trimestrielle
+Publisher: NVO987 – Culture Visuelle Moderne et Contemporaine
+Founder: Nicholas Van-Orton
+Role: Independent researcher and founder of NVO987 Association
+Contact: contact@nvo987.fr
+Website: https://nexarium.nvo987.fr/
+Organization: https://nvo987.fr/
+
+/* ABOUT */
+
+NEXARIUM is an independent quarterly online review.
+
+Its editorial scope includes culture, science, research,
+heritage, the arts, and contemporary society.
+
+Language: French
+Publication frequency: Quarterly
+
+/* PUBLICATION */
+
+First listed issue: Volume I, No. 01
+Period: First quarter of 2026
+PDF: /dokuments/nvo987-numero-01.pdf
+
+/* TECHNOLOGY */
+
+HTML5
+CSS
+Schema.org JSON-LD
+Open Graph metadata
+Atom and RSS feed formats
+XML sitemaps
+Decentralized identity references
+
+/* DIGITAL IDENTITY */
+
+DID: did:web:identity.nvo987.us
+DID document:
+https://identity.nvo987.us/.well-known/did.json
+
+/* CONTACT */
+
+Editorial inquiries: contact@nvo987.fr
+Website: https://nvo987.fr/
+
+/* COPYRIGHT */
+
+Unless otherwise stated, original content is protected by
+applicable copyright law.
+
+See the LICENSE file and the relevant rights notices for details.
