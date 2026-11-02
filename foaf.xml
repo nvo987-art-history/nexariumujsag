@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:org="http://www.w3.org/ns/org#">
+
+  <foaf:Document rdf:about="https://nexarium.nvo987.fr/foaf.xml">
+    <foaf:primaryTopic rdf:resource="https://nvo987.fr/#organization"/>
+    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">
+      NEXARIUM and NVO987 — FOAF description
+    </dc:title>
+    <dc:language xmlns:dc="http://purl.org/dc/elements/1.1/">fr</dc:language>
+  </foaf:Document>
+
+  <foaf:Organization rdf:about="https://nvo987.fr/#organization">
+
+    <foaf:name>
+      NVO987 – Culture Visuelle Moderne et Contemporaine
+    </foaf:name>
+
+    <foaf:homepage rdf:resource="https://nvo987.fr/"/>
+
+    <foaf:page rdf:resource="https://nexarium.nvo987.fr/"/>
+
+    <foaf:mbox rdf:resource="mailto:contact@nvo987.fr"/>
+
+    <foaf:phone rdf:resource="tel:+36702674440"/>
+
+    <foaf:depiction rdf:resource="https://nvo987.fr/images/logo.jpg"/>
+
+    <foaf:description xml:lang="en">
+      A cultural and research association dedicated to modern and
+      contemporary visual culture, artistic practices, cultural
+      studies, and interdisciplinary research.
+    </foaf:description>
+
+    <foaf:member>
+      <foaf:Person rdf:about="https://nvo987.us/#person">
+
+        <foaf:name>Nicholas Van-Orton</foaf:name>
+
+        <foaf:homepage rdf:resource="https://nvo987.us/"/>
+
+        <foaf:page rdf:resource="https://nvo987.us/about.html"/>
+
+        <foaf:img rdf:resource="https://nvo987.us/images/nicholas-van-orton.jpg"/>
+
+        <foaf:title>Independent researcher</foaf:title>
+
+        <foaf:workplaceHomepage rdf:resource="https://nvo987.fr/"/>
+
+      </foaf:Person>
+    </foaf:member>
+
+  </foaf:Organization>
+
+  <foaf:Document rdf:about="https://nexarium.nvo987.fr/">
+
+    <foaf:name>NEXARIUM — Revue trimestrielle</foaf:name>
+
+    <foaf:homepage rdf:resource="https://nexarium.nvo987.fr/"/>
+
+    <foaf:maker rdf:resource="https://nvo987.fr/#organization"/>
+
+    <foaf:primaryTopic rdf:resource="https://nvo987.fr/#organization"/>
+
+  </foaf:Document>
+
+</rdf:RDF>
