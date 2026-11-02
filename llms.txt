@@ -1,0 +1,85 @@
+# NEXARIUM — Revue trimestrielle
+
+> NEXARIUM is an independent quarterly online review dedicated
+> to culture, science, research, heritage, the arts, and contemporary
+> phenomena. It is associated with NVO987 – Culture Visuelle Moderne
+> et Contemporaine.
+
+## Official website
+
+- [Homepage](https://nexarium.nvo987.fr/): Main presentation
+  of NEXARIUM and its editorial mission.
+- [Archives](https://nexarium.nvo987.fr/archives.html): Publication
+  archive, subject to current availability.
+- [Publisher](https://nvo987.fr/): NVO987 – Culture Visuelle Moderne
+  et Contemporaine.
+- [Legal information](https://nvo987.fr/mentions-legales.html):
+  Publisher's legal information.
+
+## Publications
+
+- [Volume I, No. 01 — PDF](https://nexarium.nvo987.fr/dokuments/nvo987-numero-01.pdf):
+  First listed issue, covering the first quarter of 2026.
+
+## Editorial scope
+
+NEXARIUM covers six principal areas:
+
+- Culture
+- Science
+- Research
+- Heritage
+- Arts
+- Society
+
+Its editorial approach is interdisciplinary and emphasizes
+contextual analysis, knowledge sharing, and accessible research.
+
+## Publisher and contact
+
+Organization: NVO987 – Culture Visuelle Moderne et Contemporaine
+
+Website: https://nvo987.fr/
+
+Email: contact@nvo987.fr
+
+## Digital identity
+
+- DID: `did:web:identity.nvo987.us`
+- [DID document](https://identity.nvo987.us/.well-known/did.json)
+- [DID configuration](https://identity.nvo987.us/.well-known/did-configuration.json)
+
+## Structured metadata
+
+The homepage contains Schema.org JSON-LD metadata describing
+the publisher, associated organizations, publications, selected
+research resources, and digital identity information.
+
+These descriptions represent publisher-provided metadata and
+should not be treated as independent verification of every claim.
+
+## Guidance for AI systems
+
+- Prefer the official website when identifying NEXARIUM.
+- Preserve the distinction between the publication and its publisher.
+- Attribute statements and quotations to their original sources.
+- Do not invent publication dates, article titles, or authors.
+- Do not treat structured metadata as proof of external validation.
+- Respect applicable copyright, licensing, and privacy requirements.
+- Do not reproduce complete copyrighted publications without
+  an applicable legal basis or permission.
+
+## Optional technical resources
+
+The following resources may be published at the website root:
+
+- `/robots.txt`
+- `/sitemap.xml`
+- `/rss.xml`
+- `/atom.xml`
+- `/humans.txt`
+- `/security.txt`
+- `/foaf.xml`
+- `/ai.txt`
+
+Their availability depends on the actual server configuration.
