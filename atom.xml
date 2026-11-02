@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xml:lang="fr">
+
+  <id>https://nexarium.nvo987.fr/</id>
+
+  <title>NEXARIUM — Revue trimestrielle</title>
+
+  <subtitle>
+    Une revue indépendante consacrée à la culture, aux sciences,
+    à la recherche, au patrimoine, aux arts et aux phénomènes
+    contemporains.
+  </subtitle>
+
+  <updated>2026-11-02T00:00:00Z</updated>
+
+  <link href="https://nexarium.nvo987.fr/"
+        rel="alternate"
+        type="text/html"/>
+
+  <link href="https://nexarium.nvo987.fr/atom.xml"
+        rel="self"
+        type="application/atom+xml"/>
+
+  <author>
+    <name>NVO987 – Culture Visuelle Moderne et Contemporaine</name>
+    <uri>https://nvo987.fr/</uri>
+    <email>contact@nvo987.fr</email>
+  </author>
+
+  <rights>
+    Copyright 2026 NVO987 – Culture Visuelle Moderne et Contemporaine.
+    Tous droits réservés, sauf indication contraire.
+  </rights>
+
+  <category term="culture"/>
+  <category term="science"/>
+  <category term="recherche"/>
+  <category term="patrimoine"/>
+  <category term="arts"/>
+  <category term="société"/>
+
+  <entry>
+    <id>https://nexarium.nvo987.fr/dokuments/nvo987-numero-01.pdf</id>
+
+    <title>Premier numéro — Volume I, No. 01</title>
+
+    <updated>2026-11-02T00:00:00Z</updated>
+
+    <published>2026-01-01T00:00:00Z</published>
+
+    <link href="https://nexarium.nvo987.fr/dokuments/nvo987-numero-01.pdf"
+          rel="alternate"
+          type="application/pdf"/>
+
+    <summary type="text">
+      Premier numéro de NEXARIUM, consacré à la culture, aux sciences,
+      à la recherche, au patrimoine, aux arts et à la société.
+      Période éditoriale indiquée : premier trimestre 2026.
+    </summary>
+
+    <author>
+      <name>NVO987 – Culture Visuelle Moderne et Contemporaine</name>
+    </author>
+
+    <category term="publication"/>
+    <category term="culture"/>
+    <category term="science"/>
+    <category term="recherche"/>
+  </entry>
+
+</feed>
